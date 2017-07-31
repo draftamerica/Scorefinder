@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sports Test Tables</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sports_test_tables.each do |sports_test_table| %>
+      <tr>
+        <td><%= link_to 'Show', sports_test_table %></td>
+        <td><%= link_to 'Edit', edit_sports_test_table_path(sports_test_table) %></td>
+        <td><%= link_to 'Destroy', sports_test_table, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sports Test Table', new_sports_test_table_path %>
