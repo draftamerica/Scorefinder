@@ -25,19 +25,40 @@ class SportstesttablesController < ApplicationController
         nfl_url += format + "?api_key="
         nfl_url += NFL_key
         @nfl_data = NFL.get_nfl_data(nfl_url)
-        puts "*******+++ nfl_url.inspect, #{nfl_url.inspect}*****"
-        # puts "******@nfl_data.inspect, #{@nfl_data.inspect}"
-        # puts "******@nfl_data['weeks'][0].inspect, #{@nfl_data['weeks'][0].inspect}"
-        # puts "******@nfl_data['weeks'][0]['games'].inspect, #{@nfl_data['weeks'][0]['games'].inspect}"
-        # puts "******@nfl_data['weeks'][0]['games'][0].inspect, #{@nfl_data['weeks'][0]['games'][0].inspect}"
-        # puts "******...['home']['name'].inspect, #{@nfl_data['weeks'][0]['games'][0]['home']['name'].inspect}"
-        puts "******...['home']['name'].inspect, #{@nfl_data['weeks'][0]['games'][0]['home']['name'].inspect}"
-        puts "******...['scoring'].inspect, #{@nfl_data['weeks'][0]['games'][0]['scoring'].inspect}"
-        puts "******...['scoring']['home_points'].inspect, #{@nfl_data['weeks'][0]['games'][0]['scoring']['home_points'].inspect}"
-        puts "******...['scoring']['away_points'].inspect, #{@nfl_data['weeks'][0]['games'][0]['scoring']['away_points'].inspect}"
-        # puts "******@nfl_data.inspect, #{@nfl_data.inspect}"
-        # puts "******@nfl_data.inspect, #{@nfl_data.inspect}"
-        render "get_nfl_data_form"
+
+        @nfl_data['weeks'].each do |week|
+            # puts "/n******* week: #{week}"
+            week['games'].each do |game|
+                # puts "\n ******* game: #{game}"
+                team_values = {
+                    "week" => week['title'],
+                    "away_team" => game['away']['name'],
+                    "home_team" => game['home']['name'],
+                    "away_points" => game['scoring']['away_points'],
+                    "home_points" => game['scoring']['home_points'],
+                }
+                puts "\n ****team_values, #{team_values}****"
+
+                @sports_test_table = SportsTestTable.new(team_values)
+                @sports_test_table.save
+
+            end
+        end
+
+        # test_data = @nfl_data['weeks'][0]['games'][0]
+        #     puts "\n ****test_data, #{test_data}****"
+        # test_data_2 = @nfl_data['weeks'][0]['games'][0]['away']['name']
+        #     puts "\n ****test_data_2, #{test_data_2}****"
+
+
+        # test_values = {
+        #     "week" => 0,
+        #     "away_team" => test_data_2,
+        #     "home_team" => "",
+        #     "away_points" => 0,
+        #     "home_points" => 0
+        # }
+        # render "sports_test_tables/index.html.erb"
   end
 
   # GET /sports_test_tables
