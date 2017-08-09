@@ -1,0 +1,68 @@
+<%= link_to "Sign up", new_user_registration_path %>
+<%= link_to "Sign in", new_user_session_path %>
+<%= link_to "Teams", teams_path %>
+<%= link_to "Home", root_path %>
+
+<div class="logoarea">
+    <img class="nfllogos" src="http://3.bp.blogspot.com/-20g4edC8Soo/Uup25CSLmfI/AAAAAAAAF-Y/XBolQ1xsK-0/s1600/NFL_Background_Logos.jpg">
+</div>
+
+<br>
+<div class="mainlogo">
+    NFL Score Finder
+</div>
+<br>
+<br>
+<br>
+
+<div class="page">
+<!-- <h1 class="h1" align="center"> Hello again, <%= current_user.username %>! </h1> -->
+<br>
+<p class="favoriteteam"> Pick a favorite team! </p>
+<br>
+
+<div class="teamform">
+<%= form_with url: "/save_team" do |form| %>
+    <%= form.select(:team_id, options_for_select(@teamsarray)) %> <br /> <br>
+    <%= form.submit %>
+<% end %>
+</div>
+<br>
+
+
+<% if @user_team %>
+    </br>
+    <p class="teampick">
+
+    <span class="teampick2">Your favorite team has been saved as: </br> </span>
+    <br>
+    <span class="faveteam"><%= @user_team[:team_name] %></span>
+    </p>
+<% end %>
+<br>
+<br>
+<br>
+<p class="gameform">
+    GAME &nbsp; SEARCH &nbsp; FORM
+</p>
+<br>
+<br>
+
+<p class="searchform">
+Search a scoreboard by week:
+</p>
+<br>
+
+<%= form_with url: "/display_weekly_data", local:true do |form| %>
+    <%= form.select(:week, options_for_select(@weeksarray.uniq)) %> <br />
+    <%= form.submit %>
+<% end %>
+
+<div>
+<p class="catch">Odell Beckham Jr.: "The Catch". Week 12, 2014.</p>
+<img class="beckham" src="https://blog-blogmediainc.netdna-ssl.com/upload/SportsBlogcom/2658658/0207117001436797172_filepicker.jpg">
+</div>
+<!--
+<p class="catch2">Marvin Harrison: concentration at its finest. Week 14, 2003.</p>
+<img class="harrison" src="https://metalandsports.files.wordpress.com/2013/10/marvin-harrison-01.jpg">
+</div> -->

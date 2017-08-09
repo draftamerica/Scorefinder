@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+}
+.mainlogo {
+    font-size: 48px;
+    font-family: Impact, Helvetica, serif;
+    text-align: center;
+    color: #164c04;
+    opacity: 0.75;
+    box-shadow: 10px 10px 10px 25px #1e66db;
+    background-color: #ba4376;
+    transform: skewX(-5.75deg);
+    letter-spacing: 0.15em;
+}
+.nfllogos {
+    position: absolute;
+    height: auto;
+    width: 100%;
+    opacity: 0.1;
+    z-index: -1;
+}
+.page {
+    position: relative;
+    height: auto;
+    width: 100%;
+    text-align: center;
+}
+.favoriteteam {
+    /*box-shadow: 1px 1px 1px 3px blue;
+    height: 30px;
+    width: 300px;*/
+    position: relative;
+    /*background-color: gold;*/
+    opacity: 0.75;
+    font-family: Arial;
+    font-weight: bold;
+    color: blue;
+    margin: auto;
+    font-size: 25px;
+}
+.teamform {
+    color: green;
+}
+.teampick {
+    box-shadow: 1px 1px 1px 3px blue;
+    font-size: 25px;
+    height: 90px;
+    width: 300px;
+    line-height: 20px;
+    margin: auto;
+    position: relative;
+    background-color: gold;
+    opacity: 0.75;
+    font-family: Arial;
+    font-weight: bold;
+    color: brown
+}
+.teampick2 {
+    color: brown;
+    font-size: 16px;
+}
+.faveteam {
+    color: black;
+}
+.gameform {
+    box-shadow: 1px 1px 1px 5px red;
+    background-color: green;
+    font-family: "Times New Roman";
+    margin: auto;
+    position: relative;
+    height: 50px;
+    width: auto;
+    font-weight: bold;
+    opacity: 0.75;
+    height: 75px;
+    line-height: 75px;
+    font-size: 35px;
+    letter-spacing: 0.1em;
+}
+.searchform {
+    box-shadow: 1px 1px 1px 5px orange;
+    background-color: black;
+    position: relative;
+    margin: auto;
+    font-size: 25px;
+    height: 40px;
+    width: 300px;
+    color: white;
+    opacity: 0.75;
+}
+.catch {
+    position: relative;
+    top: 270px;
+    left: -1px;
+    z-index: 1;
+    font-size: 17px;
+    font-weight: bold;
+    color: black;
+}
+.beckham {
+    position: relative;
+    height: 275px;
+    top: -20px;
+    width: 500px;
+    opacity: 0.8;
+}
+/*.catch2 {
+    position: relative;
+    top: -340px;
+    left: 380px;
+}
+.harrison {
+    position: relative;
+    left: 375px;
+    top: -355px;
+    height: 275px;
+    width: 400px;
+}*/
+/*.scorespage {
+    margin: px;
+}*/
+.away {
+    height: 55px;
+}
+.home {
+    height: 55px;
+}
+.gamescore {
+    position: relative;
+    left: 5px;
+    float: left;
+    flex-wrap: wrap;
+    margin: auto;
+    height: 80px;
+    width: 330px;
+    border: 3px solid black;
+    padding: 10px;
+    background-color: #f4d142;
+}
+.awayteam {
+    float: left;
+    height: 50px;
+    width: 300px;
+    font-style: Verdana;
+    font-weight: bold;
+    font-size: 20px;
+}
+.awaypoints {
+    color: blue;
+    font-weight: bold;
+    font-size: 20px;
+}
+.hometeam {
+    height: 50px;
+    width: 300px;
+    position: relative;
+    font-style: Verdana;
+    font-weight: bold;
+    font-size: 20px;
+    float: left;
+}
+.homepoints {
+    color: blue;
+    font-weight: bold;
+    position: relative;
+    font-size: 20px;
+    top: 5px;
+}

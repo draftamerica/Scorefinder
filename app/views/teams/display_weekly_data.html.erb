@@ -1,0 +1,31 @@
+<%= link_to "Home", root_path %>
+
+<h1 align="center" class="welcomeweek"> 2016 NFL Season, Week <%= @weekpick %> </h1>
+<p>
+    <% @currentweek.each do |game| %>
+    <div class="scorespage">
+        <a href="/view_game/<%= game[:id] %>">
+        <div class="gamescore" id="game_<%= game[:id] %>">
+            <div class="away">
+                <div class="awayteam">
+                    <%= game[:away_team] %> &nbsp;
+                </div>
+                <div class="awaypoints">
+                    <%= game[:away_points] %> </br> <br>
+                </div>
+            </div>
+            <div class="home">
+                <div class="hometeam">
+                    <%= game[:home_team] %> &nbsp;
+                </div>
+                <div class="homepoints">
+                    <%= game[:home_points] %> </br> <br>
+                </div> </br>
+            </div>
+        </div>
+        </a>
+    </div>
+        <br>
+        <br>
+    <% end %>
+</p>

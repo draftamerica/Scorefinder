@@ -1,0 +1,54 @@
+<div class="logoarea">
+    <img class="nfllogos" src="http://3.bp.blogspot.com/-20g4edC8Soo/Uup25CSLmfI/AAAAAAAAF-Y/XBolQ1xsK-0/s1600/NFL_Background_Logos.jpg">
+</div>
+
+<br>
+<div class="mainlogo">
+    NFL Score Finder
+</div>
+<br>
+<br>
+<br>
+
+<div class="page">
+<!-- <h1 class="h1" align="center"> Hello again, <%= current_user.username %>! </h1> -->
+<br>
+<p class="favoriteteam"> Pick a favorite team! </p>
+
+<div class="teamform">
+<%= form_with url: "/save_team" do |form| %>
+    <%= form.select(:team_id, options_for_select(@teamsarray)) %> <br /> <br>
+    <%= form.submit %>
+<% end %>
+</div>
+
+
+<% if @user_team %>
+    </br>
+    </br>
+    <p class="favoriteteam">
+
+    <span class="teampick">Your favorite team has been saved as: </br> </span>
+    <br>
+    <span class="faveteam"><%= @user_team[:team_name] %></span>
+    </p>
+<% end %>
+<br>
+<br>
+<br>
+<br>
+<p class="gameform">
+    GAME &nbsp; SEARCH &nbsp; FORM
+</p>
+<br>
+<br>
+<br>
+<p class="searchform">
+Search a scoreboard by week:
+</p>
+<br>
+<br>
+<%= form_with url: "/testmethod" do |form| %>
+    <%= form.select(:week, options_for_select(@weeksarray.uniq)) %> <br />
+    <%= form.submit %>
+<% end %>
