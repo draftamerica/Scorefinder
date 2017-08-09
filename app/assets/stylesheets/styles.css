@@ -119,22 +119,26 @@ body {
 /*.scorespage {
     margin: px;
 }*/
+.scorespage {
+    display: inline-block;
+    float: left;
+}
 .away {
-    height: 55px;
+    height: 35px;
 }
 .home {
-    height: 55px;
+    height: 35px;
+    top: 20px;
 }
 .gamescore {
-    position: relative;
-    left: 5px;
     float: left;
     flex-wrap: wrap;
-    margin: auto;
+    display: inline-block;
     height: 80px;
     width: 330px;
     border: 3px solid black;
     padding: 10px;
+    margin: 18px;
     background-color: #f4d142;
 }
 .awayteam {
@@ -165,4 +169,56 @@ body {
     position: relative;
     font-size: 20px;
     top: 5px;
+}
+.gamescore1 {
+    position: relative;
+    margin: auto;
+    left: 5px;
+    margin: auto;
+    height: 80px;
+    width: 630px;
+    border: 3px solid black;
+    padding: 10px;
+    background-color: #adc9ea;
+}
+.awayteam1 {
+    height: 50px;
+    width: 300px;
+    font-style: Verdana;
+    font-weight: bold;
+    color: #355e03;
+    font-size: 30px;
+}
+.awaypoints1 {
+    color: #9b072c;
+    font-weight: bold;
+    font-size: 30px;
+    position: relative;
+    top: -50px;
+    float: right;
+}
+.hometeam1 {
+    height: 50px;
+    width: 300px;
+    position: relative;
+    font-style: Verdana;
+    font-weight: bold;
+    font-size: 30px;
+    color: #355e03;
+}
+.homepoints1 {
+    color: #9b072c;
+    font-weight: bold;
+    position: relative;
+    font-size: 30px;
+    top: -50px;
+    left: 37px;
+    float: right;
+}
+.commenthead {
+    position: relative;
+    font-style: Georgia serif;
+    font-size: 26px;
+    text-align: center;
+    left: 200px;
 }

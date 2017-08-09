@@ -1,1 +1,40 @@
-<p>Hello world</p>
+<%= link_to "Home", root_path %>
+
+
+<p>
+    <div class="scorespage">
+        <div class="gamescore1" id="game_<%= @currentgame[:id] %>">
+            <div class="away1">
+                <div class="awayteam1">
+                    <%= @currentgame[:away_team] %> &nbsp;
+                </div>
+                <div class="awaypoints1">
+                    <%= @currentgame[:away_points] %> </br> <br>
+                </div>
+            </div>
+            <div class="home1">
+                <div class="hometeam1">
+                    <%= @currentgame[:home_team] %> &nbsp;
+                </div>
+                <div class="homepoints1">
+                    <%= @currentgame[:home_points] %> </br> <br>
+                </div> </br>
+            </div>
+        </div>
+    </div>
+        <br>
+        <br>
+</p>
+
+<h1 class="commenthead"> Were you at this game? Did you watch it? Share your thoughts here! </h1>
+
+<%= form_with model:[current_user, @comment], local:true do |form| %>
+    <div class="field">
+        <%= form.label :title %>
+        <%= form.text_field :title %>
+        <%= form.label :comment %>
+        <%= form.text_area :content %>
+        <%= form.hidden_field :game_id, value: @game_id %>
+        <%= form.submit %>
+    </div>
+<% end %>

@@ -24,7 +24,10 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = Comment.new(comment_params)
+      puts "\n ****** params.inspect, #{params.inspect}"
+      ok_params = comment_params
+      puts "\n ****** ok_params.inspect, #{ok_params.inspect}"
+      @comment = Comment.new(ok_params)
 
     respond_to do |format|
       if @comment.save
@@ -69,6 +72,11 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.fetch(:comment, {})
+     puts "\n ****** params.inspect, #{params.inspect}"
+     params.require(:comment).permit(:title, :content, :game_id)
+
+     # params.require(:user).permit(:first_name, :last_name, :email, :username, :password)
+
+     puts "\n ****** params.inspect, #{params.inspect}"
     end
 end
