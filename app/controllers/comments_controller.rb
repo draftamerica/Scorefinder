@@ -24,18 +24,19 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-      puts "\n ****** params.inspect, #{params.inspect}"
+      puts "\n ****** create *******"
+      puts "\n ****** comment_params.inspect, #{comment_params.inspect}"
       ok_params = comment_params
       puts "\n ****** ok_params.inspect, #{ok_params.inspect}"
-      @comment = Comment.new(ok_params)
+      ok_params[:comment][:user_id] = current_user.id
+      puts "\n ****** ok_params[:comment].inspect, #{ok_params[:comment].inspect}"
+      @comment = Comment.new(ok_params[:comment])
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
-        format.json { render :show, status: :created, location: @comment }
+        format.html { redirect_to "/", notice: 'Comment was successfully created.' }
       else
-        format.html { render :new }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
+        format.html { redirect_to "/", notice: 'Comment failed to save.' }
       end
     end
   end
@@ -72,11 +73,13 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-     puts "\n ****** params.inspect, #{params.inspect}"
-     params.require(:comment).permit(:title, :content, :game_id)
+        puts "\n ****** comment_params ******"
+        puts "\n ****** params.inspect, #{params.inspect}"
+        params.permit!
 
      # params.require(:user).permit(:first_name, :last_name, :email, :username, :password)
 
-     puts "\n ****** params.inspect, #{params.inspect}"
+        puts "\n ****** params.inspect, #{params.inspect}"
+        return params.permit!
     end
 end
