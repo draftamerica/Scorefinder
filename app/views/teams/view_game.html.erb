@@ -30,6 +30,7 @@
         <br>
 </p>
 
+
 <h1 class="commenthead"> Were you at this game? Did you watch it? Share your thoughts here! </h1>
 
 <div class="commentform">
@@ -43,9 +44,18 @@
         <br>
         <%= form.text_area :content %>
         <br>
-        <%= form.hidden_field :game_id, value: @game_id %>
+        <%= form.hidden_field :scoreboard_id, value: @scoreboard_id %>
         <br>
         <%= form.submit %>
     </div>
 </div>
 <% end %>
+
+<p>
+    <strong>All Comments</strong>
+    <br>
+    <br>
+    <% @comments.each do |comment| %>
+        <%= comment.content %> <br>
+    <% end %>
+</p>

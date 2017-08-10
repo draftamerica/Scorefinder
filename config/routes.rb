@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   post "/save_team" => "teams#save_teams"
   get "/" => "teams#homepage"
-  get "view_game/:game_id" => "teams#view_game"
+  get "view_game/:scoreboard_id" => "teams#view_game"
   # post "/search_games" => "users#search_games"
   # get "/search_games" => "users#search_games"
   post "/display_weekly_data" => "teams#display_weekly_data"

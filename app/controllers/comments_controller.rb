@@ -36,6 +36,8 @@ class CommentsController < ApplicationController
       if @comment.save
         format.html { redirect_to "/", notice: 'Comment was successfully created.' }
       else
+        puts '\n ** comment.error **'
+        puts @comment.errors.full_messages
         format.html { redirect_to "/", notice: 'Comment failed to save.' }
       end
     end

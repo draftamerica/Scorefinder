@@ -43,10 +43,10 @@ class TeamsController < ApplicationController
   def view_game
       puts "\n**** view_game ******"
       puts "\n ***** params.inspect, #{params.inspect} ******"
-      @currentgame = Scoreboard.find(params[:game_id])
-      @comments = Comment.where(game_id: params[:game_id])
+      @currentgame = Scoreboard.find(params[:scoreboard_id])
+      @comments = Comment.where(scoreboard_id: params[:scoreboard_id])
       @comment = Comment.new
-      @game_id = params[:game_id]
+      @scoreboard_id = params[:scoreboard_id]
   end
 
   def display_weekly_data

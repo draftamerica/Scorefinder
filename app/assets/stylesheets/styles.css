@@ -184,46 +184,50 @@ a:visited {
     position: relative;
     margin: auto;
     left: 5px;
+    top: 20px;
     margin: auto;
-    height: 80px;
-    width: 630px;
+    height: 90px;
+    width: 650px;
     border: 3px solid black;
     padding: 10px;
+    opacity: 0.8;
     background-color: #adc9ea;
 }
 .awayteam1 {
     height: 50px;
-    width: 300px;
+    width: 350px;
     font-style: Verdana;
     font-weight: bold;
-    color: #355e03;
+    color: #9b072c;
     font-size: 30px;
 }
 .awaypoints1 {
-    color: #9b072c;
+    color: #355e03;
     font-weight: bold;
     font-size: 30px;
     position: relative;
-    top: -50px;
+    top: -52px;
     float: right;
+    padding: 1px;
 }
 .hometeam1 {
     height: 50px;
-    width: 300px;
+    width: 350px;
     position: relative;
     font-style: Verdana;
     font-weight: bold;
     font-size: 30px;
-    color: #355e03;
+    color: #9b072c;
 }
 .homepoints1 {
-    color: #9b072c;
+    color: #355e03;
     font-weight: bold;
     position: relative;
     font-size: 30px;
-    top: -50px;
-    left: 37px;
+    top: -52px;
+    left: 40px;
     float: right;
+    padding: 1px;
 }
 .commenthead {
     position: relative;
@@ -233,7 +237,7 @@ a:visited {
     left: 200px;
 }
 .nfllogos1 {
-    position: absolute;
+    position: fixed;
     height: auto;
     width: 100%;
     opacity: 0.1;
