@@ -1,0 +1,33 @@
+<div class="topnav">
+    <div id="myTopnav"><%= link_to "Home", root_path %></div>
+    <div id="myTopnav"><a href="mailto:draftamerica@gmail.com">Contact</a></div>
+    <div id="myTopnav"><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<p>
+
+    <div class="logoarea2">
+        <img class="nfllogos2" src="http://3.bp.blogspot.com/-20g4edC8Soo/Uup25CSLmfI/AAAAAAAAF-Y/XBolQ1xsK-0/s1600/NFL_Background_Logos.jpg">
+    </div>
+
+
+<div class="teamspage">
+    <div class="teamname">
+        <%= @currentteam[:team_name] %> <br> <br>
+    </div>
+    <div class="teaminfo" id="team_<%= @currentteam[:id] %>">
+        <div id="teamdata">
+        <u>Stadium:</u> &nbsp; <div id="teamstuff"><%= @currentteam[:stadium] %></div> <br> <br> <br>
+        <u>2016 record:</u> &nbsp; <div id="teamstuff"><%= @currentteam[:wins_losses] %></div> &nbsp; <br> <br> <br>
+        <u>Super Bowl titles:</u> &nbsp; <div id="teamstuff"><%= @currentteam[:titles] %></div> &nbsp; <br> <br> <br>
+        <u>Main rival:</u> &nbsp; <div id="teamstuff"><%= @currentteam[:rival] %></div> &nbsp;
+        <img class="teamlogo" src="<%= @currentteam[:logo] %>">
+        </div>
+    </div>
+</div>
+
+</p>

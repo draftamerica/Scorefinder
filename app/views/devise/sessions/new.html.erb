@@ -1,5 +1,14 @@
-<h2>Log in</h2>
+<div class="logoarea1">
+    <img class="nfllogos1" src="http://3.bp.blogspot.com/-20g4edC8Soo/Uup25CSLmfI/AAAAAAAAF-Y/XBolQ1xsK-0/s1600/NFL_Background_Logos.jpg">
+</div>
 
+<br>
+<br>
+<br>
+
+<h2 class="hello" align="center">Log in</h2>
+
+<div class="registerform">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
@@ -22,5 +31,8 @@
     <%= f.submit "Log in" %>
   </div>
 <% end %>
+</div>
 
-<%= render "devise/shared/links" %>
+<div class="render">
+    <%= render "devise/shared/links" %>
+</div>

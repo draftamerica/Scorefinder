@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170810183327) do
+ActiveRecord::Schema.define(version: 20170814190840) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,8 @@ ActiveRecord::Schema.define(version: 20170810183327) do
     t.string "wins_losses"
     t.integer "titles"
     t.string "rival"
+    t.string "logo"
+    t.string "abbr"
     t.index ["team_id"], name: "index_teams_on_team_id"
     t.index ["user_id"], name: "index_teams_on_user_id"
   end

@@ -1,5 +1,8 @@
-<%= link_to "Home", root_path %>
-
+<div class="topnav">
+    <div id="myTopnav"><%= link_to "Home", root_path %></div>
+    <div id="myTopnav"><a href="mailto:draftamerica@gmail.com">Contact</a></div>
+    <div id="myTopnav"><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></div>
+</div>
 
 <div class="logoarea1">
     <img class="nfllogos1" src="http://3.bp.blogspot.com/-20g4edC8Soo/Uup25CSLmfI/AAAAAAAAF-Y/XBolQ1xsK-0/s1600/NFL_Background_Logos.jpg">
@@ -8,9 +11,39 @@
 <p>
     <div class="scorespage1">
         <div class="gamescore1" id="game_<%= @currentgame[:id] %>">
+            <div class="scoring">
+                <table class="quarterstable">
+                <tr>
+                    <th>1ST &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
+                    <th>2ND &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
+                    <th>3RD &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
+                    <th>4TH &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
+                    <th>OT</th>
+                </tr>
+            </table>
+
+        <table class="awayteampoints">
+            <tr>
+                <% @game_stats['away_team']['scoring'].each do |quarter| %>
+                        <td><%= quarter['points'] %></td>
+                <% end %>
+                <% if @game_stats['away_team']['scoring'].length == 4 %>
+                    <td>&nbsp;</td>
+                <% end %>
+            </tr>
+
+            <% @game_stats['home_team']['scoring'].each do |quarter| %>
+                    <td><%= quarter['points'] %></td>
+            <% end %>
+            <% if @game_stats['away_team']['scoring'].length == 4 %>
+                <td>&nbsp;</td>
+            <% end %>
+        </table>
+            </div>
+
             <div class="away1">
                 <div class="awayteam1">
-                    <%= @currentgame[:away_team] %> &nbsp;
+                        <a href="/view_team/<%= @team[0][:id]%>"><%= @currentgame[:away_team] %> </a> &nbsp;
                 </div>
                 <div class="awaypoints1">
                     <%= @currentgame[:away_points] %> </br> <br>
@@ -18,7 +51,7 @@
             </div>
             <div class="home1">
                 <div class="hometeam1">
-                    <%= @currentgame[:home_team] %> &nbsp;
+                    <a href="/view_team/<%= @team2[0][:id]%>"><%= @currentgame[:home_team] %> </a> &nbsp;
                 </div>
                 <div class="homepoints1">
                     <%= @currentgame[:home_points] %> </br> <br>
@@ -30,32 +63,45 @@
         <br>
 </p>
 
-
 <h1 class="commenthead"> Were you at this game? Did you watch it? Share your thoughts here! </h1>
 
 <div class="commentform">
 <%= form_with(model:[current_user, @comment], local:true) do |form| %>
-    <div class="field">
+    <div class="field3">
         <%= form.label :title %>
         <br>
         <%= form.text_field :title %>
         <br>
         <%= form.label :comment %>
         <br>
-        <%= form.text_area :content %>
+        <%= form.text_area :content, :cols => "19", :rows => "7" %>
         <br>
         <%= form.hidden_field :scoreboard_id, value: @scoreboard_id %>
         <br>
+        <div class="actions3">
         <%= form.submit %>
+        </div>
     </div>
 </div>
 <% end %>
+<br>
+<br>
 
-<p>
-    <strong>All Comments</strong>
+
+
+<div class="commentsection">
+    <div class="commenthead2">
+        HERE'S &nbsp; THE &nbsp; BUZZ
+    </div>
     <br>
     <br>
     <% @comments.each do |comment| %>
+    <br>
+    <strong>
+        User ID:
+        <%= comment.user_id %> <br>
+    </strong>
         <%= comment.content %> <br>
     <% end %>
-</p>
+    </p>
+</div>

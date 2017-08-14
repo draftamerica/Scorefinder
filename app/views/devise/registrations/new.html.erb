@@ -1,9 +1,18 @@
-<h2>Sign up</h2>
+<div class="logoarea1">
+    <img class="nfllogos1" src="http://3.bp.blogspot.com/-20g4edC8Soo/Uup25CSLmfI/AAAAAAAAF-Y/XBolQ1xsK-0/s1600/NFL_Background_Logos.jpg">
+</div>
 
+<br>
+<br>
+<br>
+
+<h2 class="hello" align="center">Sign up</h2>
+
+<div class="registerform2">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
+  <div class="field2">
     <%= f.label :firstname %><br />
     <%= f.text_field :firstname, autofocus: true %>
   </div>
@@ -26,7 +35,7 @@
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(<%= @minimum_password_length %> char. min.)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
@@ -35,10 +44,19 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+  <br>
+  <br>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
+</div>
+<br>
+<br>

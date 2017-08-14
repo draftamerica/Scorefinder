@@ -1,7 +1,13 @@
-<%= link_to "Sign up", new_user_registration_path %>
+<!-- <%= link_to "Sign up", new_user_registration_path %>
 <%= link_to "Sign in", new_user_session_path %>
 <%= link_to "Teams", teams_path %>
-<%= link_to "Home", root_path %>
+<%= link_to "Home", root_path %> -->
+
+<div class="topnav">
+    <div id="myTopnav"><%= link_to "Home", root_path %></div>
+    <div id="myTopnav"><a href="mailto:draftamerica@gmail.com">Contact</a></div>
+    <div id="myTopnav"><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></div>
+</div>
 
 <div class="logoarea">
     <img class="nfllogos" src="http://3.bp.blogspot.com/-20g4edC8Soo/Uup25CSLmfI/AAAAAAAAF-Y/XBolQ1xsK-0/s1600/NFL_Background_Logos.jpg">
@@ -23,7 +29,7 @@
 
 <div class="teamform">
 <%= form_with url: "/save_team" do |form| %>
-    <%= form.select(:team_id, options_for_select(@teamsarray)) %> <br /> <br>
+    <%= form.select(:team_id, options_for_select(@teamsarray), {}, :style => "width:250px", :style => "height:30px") %> <br /> <br>
     <%= form.submit %>
 <% end %>
 </div>
@@ -53,10 +59,12 @@ Search a scoreboard by week:
 </p>
 <br>
 
+<div class="menusubmit">
 <%= form_with url: "/display_weekly_data", local:true do |form| %>
-    <%= form.select(:week, options_for_select(@weeksarray.uniq)) %> <br />
+    <%= form.select(:week, options_for_select(@weeksarray.uniq), {}, :style => "width:250px") %> <br />
     <%= form.submit %>
 <% end %>
+</div>
 
 <div>
 <p class="catch">Odell Beckham Jr.: "The Catch". Week 12, 2014.</p>

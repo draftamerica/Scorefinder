@@ -40,6 +40,14 @@ class TeamsController < ApplicationController
   #     render "display_weekly_data"
   #   end
 
+  def view_team
+      puts "\n**** view_team ******"
+      puts "\n ***** params.inspect, #{params.inspect} ******"
+      @currentteam = Team.find(params[:team_id])
+      @team_id = params[:team_id]
+      puts "\n ****** @logo, #{@logo.inspect}"
+  end
+
   def view_game
       puts "\n**** view_game ******"
       puts "\n ***** params.inspect, #{params.inspect} ******"
@@ -47,6 +55,33 @@ class TeamsController < ApplicationController
       @comments = Comment.where(scoreboard_id: params[:scoreboard_id])
       @comment = Comment.new
       @scoreboard_id = params[:scoreboard_id]
+      if @currentgame[:away_team] == "San Diego Chargers"
+          awayteam = "Los Angeles Chargers"
+      else
+          awayteam = @currentgame[:away_team]
+      end
+      if @currentgame[:home_team] == "San Diego Chargers"
+          hometeam = "Los Angeles Chargers"
+      else
+          hometeam = @currentgame[:home_team]
+      end
+      @team = Team.where(team_name: [awayteam])
+      @team2 = Team.where(team_name: [hometeam])
+
+      @awaytm = Team.where(team_name:awayteam)
+      @hometm = Team.where(team_name:hometeam)
+      @whichweek = session[:week_id]
+      puts "\n ******* @whichweek, #{@whichweek.inspect}"
+
+    #   @whichweek = Scoreboard.find(params[:week])
+      puts "\n ******* @awaytm, #{@awaytm.inspect}"
+      puts "\n ******* @hometm, #{@hometm.inspect}"
+      puts "\n ******* @awaytm[0][:abbr], #{@awaytm[0][:abbr].inspect}"
+    #   puts "\n ******* @whichweek, #{@whichweek.inspect}"
+
+      @game_stats = get_stats(@awaytm[0][:abbr], @hometm[0][:abbr], @whichweek)
+      puts "\n ****@game_stats, #{@game_stats.inspect}"
+
   end
 
   def display_weekly_data
@@ -54,6 +89,7 @@ class TeamsController < ApplicationController
       puts "\n ***** params.inspect, #{params.inspect} ******"
       puts "\n *****week_params[:week], #{week_params[:week].inspect} ******"
       @currentweek = Scoreboard.where(week: week_params[:week])
+      session[:week_id] = week_params[:week]
       puts "\n*****@currentweek.length.inspect, #{@currentweek.length.inspect}"
       @weekpick = week_params[:week]
       puts "\n****** @weekpick.inspect, #{@weekpick.inspect}"
@@ -68,6 +104,33 @@ end
       @user = current_user
       @user.update_attribute(:team_id, user_params[:team_id])
       redirect_to "/"
+  end
+
+  def get_stats(awaytm, hometm, whichweek)
+      puts "\n ****get_stats*****"
+      base_url = "https://api.sportradar.us/nfl-"
+      access_level = "t"
+      version = 1
+      year = 2016
+      nfl_season = "REG"
+      week = whichweek
+      away_team = awaytm
+      home_team = hometm
+      format = "json"
+
+      nfl_url = base_url
+      nfl_url += access_level
+      nfl_url += version.to_s + "/"
+      nfl_url += year.to_s + "/"
+      nfl_url += nfl_season.to_s + "/"
+      nfl_url += week.to_s + "/"
+      nfl_url += away_team + "/"
+      nfl_url += home_team + "/boxscore."
+      nfl_url += format + "?api_key="
+      nfl_url += NFL_key
+      puts "\*****nfl_url, #{nfl_url.inspect}"
+      game_stats = NFL.get_nfl_data(nfl_url)
+      return game_stats
   end
 
   def get_nfl_data
