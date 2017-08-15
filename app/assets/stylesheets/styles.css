@@ -79,6 +79,8 @@ a:visited {
 .gameform {
     box-shadow: 1px 1px 1px 5px red;
     background-color: green;
+    color: #160060;
+    text-shadow: 0.5px 0.5px orange;
     font-family: "Times New Roman";
     margin: auto;
     position: relative;
@@ -88,8 +90,7 @@ a:visited {
     opacity: 0.75;
     height: 75px;
     line-height: 75px;
-    font-size: 35px;
-    letter-spacing: 0.1em;
+    font-size: 32px;
 }
 .searchform {
     box-shadow: 1px 1px 1px 2px blue;
@@ -154,7 +155,7 @@ a:visited {
     margin: auto;
     position: relative;
     top: 20px;
-    left: -45px;
+    left: -25px;
     background-color: #ea9875;
 }
 .away {
@@ -170,7 +171,8 @@ a:visited {
     border: 3px solid black;
     padding: 10px;
     margin: 25px;
-    background-color: #f4d142;
+    /*background-color: #f4d142;*/
+    background: linear-gradient(white, #f4d142, orange);
 }
 .awayteam {
     float: left;
@@ -208,27 +210,35 @@ a:visited {
     left: 5px;
     top: 20px;
     margin: auto;
-    height: 90px;
-    width: 650px;
+    height: 77px;
+    width: 575px;
     border: 3px solid black;
     padding: 10px;
     opacity: 0.8;
     background: linear-gradient(white, gray);
 }
+.quart {
+    font-size: 20px;
+    color: green;
+    text-shadow: 1px 1px blue;
+}
 .awayteam1 {
     height: 50px;
     width: 350px;
+    position: relative;
+    top: -10px;
     font-style: Verdana;
     font-weight: bold;
     color: #9b072c;
     font-size: 30px;
 }
 .awaypoints1 {
-    color: #355e03;
+    color: blue;
     font-weight: bold;
-    font-size: 30px;
+    text-shadow: 1px 1px brown;
+    font-size: 31px;
     position: relative;
-    top: -52px;
+    top: -60px;
     float: right;
     padding: 1px;
 }
@@ -236,32 +246,46 @@ a:visited {
     height: 50px;
     width: 350px;
     position: relative;
+    top: -1px;
     font-style: Verdana;
     font-weight: bold;
     font-size: 30px;
     color: #9b072c;
 }
 .homepoints1 {
-    color: #355e03;
+    color: blue;
     font-weight: bold;
+    text-shadow: 1px 1px brown;
     position: relative;
-    font-size: 30px;
-    top: -52px;
+    font-size: 31px;
+    top: -53px;
     left: 40px;
     float: right;
     padding: 1px;
 }
 .commenthead {
     font-style: Georgia serif;
-    position: relative;
-    font-size: 26px;
-    left: 200px;
+    font-size: 24px;
     text-align: center;
-    color: blue;
+    font-weight: bold;
+    height: 100px;
+    /*color: #ccc90a;*/
     text-shadow: 1px 1px white;
+    margin: 50px;
     /*text-align: center;
     margin: auto;*/
 }
+/*.commenthead > p {
+    position: relative;
+    text-align: center;
+}*/
+/*#commentheads {
+    text-align: center;
+    position: relative;
+    color: blue;
+    font-weight: bold;
+    font-size: 24px;
+}*/
 .nfllogos1 {
     position: fixed;
     height: auto;
@@ -274,17 +298,28 @@ a:visited {
     height: 20px;
     width: 200px;
 }
+.titlebox {
+    position: relative;
+    left: 110px;
+}
+.titletitle {
+    text-align: center;
+}
+.commenttitle {
+    text-align: center;
+}
 .commentform {
     position: relative;
     height: 200px;
     width: 400px;
     margin: auto;
-    top: 50px;
+    top: 5px;
     left: 50px;
 }
 .commenthead2 {
     left: 10px;
-    font-size: 25px;
+    font-size: 23px;
+    position: relative;
     font-family: Georgia;
     margin: auto;
     font-weight: bold;
@@ -294,8 +329,8 @@ a:visited {
     position: relative;
     margin: auto;
     border: 1px solid black;
-    height: 500px;
-    width: 500px;
+    height: 400px;
+    width: 600px;
     text-align: center;
     font-size: 15px;
     color: blue;
@@ -391,7 +426,7 @@ a:visited {
     display: inline-block;
     text-align: center;
     margin: 2px;
-    padding: 7px 8px;
+    padding: 7px 28px;
     text-decoration: none;
     left: 50px;
     font-size: 20px;
@@ -476,21 +511,22 @@ a:visited {
     padding: 10px;
 }
 .field3 {
-    height: 200px;
-    width: 150px;
+    height: 250px;
+    width: 350px;
     position: relative;
     background-color: orange;
-    left: 50px;
-    top: -50px;
+    left: -30px;
+    top: -81px;
     margin: 5px;
     padding: 10px;
+    opacity: 0.9;
 }
 .textarea {
-    width: 300px;
+    width: 500px;
 }
 .actions3 {
     width: 200px;
-    left: 15px;
+    left: 115px;
     position: relative;
 }
 .scoring {
@@ -503,24 +539,35 @@ a:visited {
 }
 .quarterstable {
     position: relative;
-    left: 10px;
-    top: -40px;
-    border: 1px solid black;
+    left: 20px;
+    top: -103.25px;
     color: #065f6d;
+    float: left;
+    display: inline-block;
+    color: red;
+    text-shadow: 1px 1px black;
+    font-size: 24.5px;
+    font-weight: bold;
+    margin: 2px;
+    height: 20px;
+    width: 292px;
+    padding: 10px 20px;
 }
 .awayteampoints {
     float: left;
     position: relative;
     display: inline-block;
+    margin: auto;
     color: red;
     font-size: 25px;
     font-weight: bold;
-    left: 10px;
+    left: -1px;
     top: -38px;
-    margin: 5px;
+    margin: 10px;
     height: 20px;
-    width: 40px;
-    padding: 10px;
+    width: 292px;
+    padding: 10px 20px;
+    border: 1px solid blue;
 }
 .hometeampoints {
     float: left;
@@ -529,13 +576,52 @@ a:visited {
     color: red;
     font-size: 25px;
     font-weight: bold;
-    left: 10px;
-    top: -35px;
-    margin: 5px;
-    height: 20px;
-    width: 40px;
-    padding: 10px;
+    left: 1px;
+    top: -45px;
+    margin: 7px;
+    height: 30px;
+    width: 314px;
+    padding: 7px 10px;
+    border: 1px solid blue;
 }
+#homepoints {
+    float: left;
+    position: relative;
+    display: inline-block;
+    margin: 23.5px;
+    color: red;
+    line-height: 10px;
+    top: -13px;
+}
+.quarterpoints {
+    float: left;
+    /*margin: auto;*/
+    text-align: center;
+    position: relative;
+    display: flex;
+    padding: 15px 27px;
+    top: -38px;
+    color: red;
+    font-size: 25px;
+    font-weight: bold;
+}
+.quarterpoints2 {
+    float: left;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    padding: 15px 27px;
+    top: -48px;
+    left: 5px;
+    color: red;
+    font-size: 25px;
+    font-weight: bold;
+}
+/*#quarterpointz {
+    float: left;
+    position: relative;
+    display: inline-block;
+}*/
 /*#quarter {
     display: inline;
     float: left;

@@ -7,38 +7,43 @@
 <div class="logoarea1">
     <img class="nfllogos1" src="http://3.bp.blogspot.com/-20g4edC8Soo/Uup25CSLmfI/AAAAAAAAF-Y/XBolQ1xsK-0/s1600/NFL_Background_Logos.jpg">
 </div>
+<br>
 
 <p>
     <div class="scorespage1">
         <div class="gamescore1" id="game_<%= @currentgame[:id] %>">
             <div class="scoring">
                 <table class="quarterstable">
+                    <th class="quart">1st &nbsp; </th>
+                    <th class="quart">2nd &nbsp; </th>
+                    <th class="quart">3rd &nbsp; </th>
+                    <th class="quart">4th &nbsp; </th>
+                    <th class="quart">OT &nbsp; </th>
+                    <tr>
+                        <% @game_stats['away_team']['scoring'].each do |quarter| %>
+                        <div class="quarterpoints"><td><%= quarter['points'] %><br><br></td></div>
+                    <% end %>
+                    </tr>
+
                 <tr>
-                    <th>1ST &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
-                    <th>2ND &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
-                    <th>3RD &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
-                    <th>4TH &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
-                    <th>OT</th>
+                    <% @game_stats['home_team']['scoring'].each do |quarter| %>
+                        <div class="quarterpoints"><td><%= quarter['points'] %> </td></div>
+                    <% end %>
                 </tr>
             </table>
 
-        <table class="awayteampoints">
-            <tr>
-                <% @game_stats['away_team']['scoring'].each do |quarter| %>
-                        <td><%= quarter['points'] %></td>
-                <% end %>
+
                 <% if @game_stats['away_team']['scoring'].length == 4 %>
                     <td>&nbsp;</td>
                 <% end %>
             </tr>
+                <br>
 
-            <% @game_stats['home_team']['scoring'].each do |quarter| %>
-                    <td><%= quarter['points'] %></td>
-            <% end %>
-            <% if @game_stats['away_team']['scoring'].length == 4 %>
-                <td>&nbsp;</td>
-            <% end %>
-        </table>
+                <!-- <div class="hometeampoints"> -->
+                <% if @game_stats['away_team']['scoring'].length == 4 %>
+                    <td>&nbsp;</td>
+                <% end %>
+                <!-- </div> -->
             </div>
 
             <div class="away1">
@@ -63,18 +68,26 @@
         <br>
 </p>
 
-<h1 class="commenthead"> Were you at this game? Did you watch it? Share your thoughts here! </h1>
+<div class="commenthead">
+    Were you at this game? Did you watch it? Share your thoughts here!
+</div>
 
 <div class="commentform">
 <%= form_with(model:[current_user, @comment], local:true) do |form| %>
     <div class="field3">
+        <div class="titletitle">
         <%= form.label :title %>
+        </div>
         <br>
+        <div class="titlebox">
         <%= form.text_field :title %>
+        </div>
         <br>
+        <div class="commenttitle">
         <%= form.label :comment %>
+        </div>
         <br>
-        <%= form.text_area :content, :cols => "19", :rows => "7" %>
+        <%= form.text_area :content, :cols => "55", :rows => "7" %>
         <br>
         <%= form.hidden_field :scoreboard_id, value: @scoreboard_id %>
         <br>
@@ -105,3 +118,5 @@
     <% end %>
     </p>
 </div>
+<br>
+<br>

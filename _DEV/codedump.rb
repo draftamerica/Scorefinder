@@ -8,6 +8,21 @@
     </div>
 <% end %>
 
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+
 https://api.sportradar.us/nfl-t1/2016/REG/1/MIN/TEN/boxscore.json?api_key=2k82hqcedjp8uf9cksbbx773
 
 {"id":"3b1521d9-ec2c-48e9-b695-c493e65470b1","scheduled":"2016-09-11T17:00:00+00:00","status":"closed","completed":"2016-09-11T20:01:57+00:00","quarter":4,"clock":":00","home_team":
