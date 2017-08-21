@@ -1,7 +1,7 @@
 class SportstesttablesController < ApplicationController
   before_action :set_sports_test_table, only: [:show, :edit, :update, :destroy]
 
-  include NFL
+  # include NFL
 
         # test_data = @nfl_data['weeks'][0]['games'][0]
         #     puts "\n ****test_data, #{test_data}****"
