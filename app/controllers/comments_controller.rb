@@ -34,7 +34,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to "/", notice: 'Comment was successfully created.' }
+        format.html { redirect_to "/view_game/[:scoreboard_id])", notice: 'Comment was successfully created.' }
       else
         puts '\n ** comment.error **'
         puts @comment.errors.full_messages

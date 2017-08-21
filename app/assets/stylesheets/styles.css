@@ -278,14 +278,15 @@ a:visited {
 .scoringheadbox {
     box-shadow: 1px 1px 3px 3px blue;
     background: linear-gradient(red, yellow);
-    width: 400px;
+    /*width: 400px;*/
     margin: auto;
 }
 .scoringsummary {
     top: -40px;
-    font-size: 14px;
+    font-size: 15px;
     width: 500px;
     font-weight: bold;
+    letter-spacing: 0.05em;
     color: #2A01F5;
     background-color: #A9EC0E;
     opacity: 0.9;

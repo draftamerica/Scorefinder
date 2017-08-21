@@ -147,7 +147,7 @@ end
       nfl_url += away_team + "/"
       nfl_url += home_team + "/boxscore."
       nfl_url += format + "?api_key="
-      nfl_url += NFL_key
+      nfl_url += "rjj2gdr6y9fmrunqqx6fnpct"
       puts "\*****nfl_url, #{nfl_url.inspect}"
       game_stats = NFL.get_nfl_data(nfl_url)
       return game_stats
