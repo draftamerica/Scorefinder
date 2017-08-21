@@ -20,7 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'pg'
 gem 'rb-readline'
 gem 'devise'
-require 'httparty'
+gem 'httparty'
 gem 'nokogiri'
 
 # Use CoffeeScript for .coffee assets and views
