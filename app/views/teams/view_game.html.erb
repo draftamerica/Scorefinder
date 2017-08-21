@@ -68,6 +68,18 @@
         <br>
 </p>
 
+<div class="scoringheadbox">
+<div class="scoringhead">
+    SCORING SUMMARY
+</div>
+</div>
+
+<div class="scoringsummary">
+    <% @game_stats['scoring_drives'].each do |scores| %>
+        <%= scores['scores'][0]['summary'] %><br><br>
+    <% end %>
+</div>
+
 <div class="commenthead">
     Were you at this game? Did you watch it? Share your thoughts here!
 </div>
@@ -87,7 +99,7 @@
         <%= form.label :comment %>
         </div>
         <br>
-        <%= form.text_area :content, :cols => "55", :rows => "7" %>
+        <%= form.text_area :content, :cols => "88", :rows => "7" %>
         <br>
         <%= form.hidden_field :scoreboard_id, value: @scoreboard_id %>
         <br>
@@ -118,5 +130,16 @@
     <% end %>
     </p>
 </div>
+<br>
+<br>
+
+<div class="teamstats">
+</div>
+
+<br>
+
+
+
+<br>
 <br>
 <br>

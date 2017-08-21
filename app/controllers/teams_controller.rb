@@ -80,8 +80,28 @@ class TeamsController < ApplicationController
     #   puts "\n ******* @whichweek, #{@whichweek.inspect}"
 
       @game_stats = get_stats(@awaytm[0][:abbr], @hometm[0][:abbr], @whichweek)
-      puts "\n ****@game_stats, #{@game_stats.inspect}"
+      @player_stats = get_players(@awaytm[0][:abbr], @hometm[0][:abbr], @whichweek)
 
+    #   puts "\n *****@player stats, #{@player_stats['home_team']['statistics']['third_down_efficiency'].inspect}"
+    #   puts "\n *****@player stats, #{@player_stats['home_team']['statistics']['rushing']['players'][0]['name'].inspect}"
+    #   puts "\n *****TESTING!!!!!****, #{@player_stats['away_team']['statistics']['rushing']['players']['name'].inspect}"
+      puts "\n ****@game_stats, #{@game_stats.inspect}"
+    #   puts "\n*****TESTING-1-2-3!!!!, #{@player_stats['away_team']['statistics']['rushing']['players'].inspect}"
+      @rushingaway = @player_stats['away_team']['statistics']['rushing']['players']
+      @rushinghome = @player_stats['home_team']['statistics']['rushing']['players']
+      @passingaway = @player_stats['away_team']['statistics']['passing']['players']
+      @passinghome = @player_stats['home_team']['statistics']['passing']['players']
+      puts "\n*****TESTING 1-2-3!!!!, #{@rushingaway[0..10].inspect}"
+      puts "\n*****TESTING 1-2-3!!!!, #{@rushinghome.inspect}"
+      puts "\n*****TESTING 1-2-3!!!!, #{@passingaway.inspect}"
+      puts "\n*****TESTING 1-2-3!!!!, #{@passinghome.inspect}"
+      puts "\n*****TESTING 1-2-3!!!!, #{@player_stats['away_team']['statistics']['passing']['team']['yds'].inspect}"
+      puts "\n*****TESTING 1-2-3!!!!, #{@player_stats['away_team']['statistics']['fourth_down_efficiency'].inspect}"
+    #   puts "\n*****TESTING 1-2-3!!!!, #{@player_stats['away_team']['statistics']['third_down_efficiency'].inspect}"
+    #   puts "\n*****TESTING 1-2-3!!!!, #{@player_stats['away_team']['statistics']['third_down_efficiency'].inspect}"
+    #   puts "\n*****C'MON MAN!!!!!!!!!!, #{@player_stats['away_team']['statistics']['rushing']['players'].inspect}"
+    #   puts "\n*****TESTING-1-2-3!!!!, #{@player_stats['away_team']['statistics']['rushing']['players'][1]['name'].inspect}"
+    #   puts "\n ****@game_stats===== METHOD!+=====, #{@game_stats['scoring_drives'][0]['scores'][0]['summary'].inspect}"
   end
 
   def display_weekly_data
@@ -128,6 +148,33 @@ end
       nfl_url += home_team + "/boxscore."
       nfl_url += format + "?api_key="
       nfl_url += NFL_key
+      puts "\*****nfl_url, #{nfl_url.inspect}"
+      game_stats = NFL.get_nfl_data(nfl_url)
+      return game_stats
+  end
+
+  def get_players(awaytm, hometm, whichweek)
+      puts "\n ****get_players*****"
+      base_url = "https://api.sportradar.us/nfl-"
+      access_level = "t"
+      version = 1
+      year = 2016
+      nfl_season = "REG"
+      week = whichweek
+      away_team = awaytm
+      home_team = hometm
+      format = "json"
+
+      nfl_url = base_url
+      nfl_url += access_level
+      nfl_url += version.to_s + "/"
+      nfl_url += year.to_s + "/"
+      nfl_url += nfl_season.to_s + "/"
+      nfl_url += week.to_s + "/"
+      nfl_url += away_team + "/"
+      nfl_url += home_team + "/statistics."
+      nfl_url += format + "?api_key="
+      nfl_url += "2k82hqcedjp8uf9cksbbx773"
       puts "\*****nfl_url, #{nfl_url.inspect}"
       game_stats = NFL.get_nfl_data(nfl_url)
       return game_stats
