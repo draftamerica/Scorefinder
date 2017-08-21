@@ -24,3 +24,4 @@
 
 # ignore secrets.yml
 config/secrets.yml
+/_DEV
