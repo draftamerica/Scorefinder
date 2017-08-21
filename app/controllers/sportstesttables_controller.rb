@@ -17,7 +17,6 @@ class SportstesttablesController < ApplicationController
         #     "home_points" => 0
         # }
         # render "sports_test_tables/index.html.erb"
-  end
 
   # GET /sports_test_tables
   # GET /sports_test_tables.json
