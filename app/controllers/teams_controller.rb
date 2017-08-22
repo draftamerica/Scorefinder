@@ -1,7 +1,7 @@
 class TeamsController < ApplicationController
   before_action :set_team, only: [:show, :edit, :update, :destroy]
 
-  include NFL
+  include Nfl
 
   def homepage
       puts "\n ****homepage*****"
