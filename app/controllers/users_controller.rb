@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  # include NFL
+  include NFL
 
   def homepage
       puts "\n ****homepage*****"

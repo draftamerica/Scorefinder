@@ -2,18 +2,9 @@ require_relative 'boot'
 
 require 'rails/all'
 
-require 'json'
-require 'net/http'
-
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
-
-def self.get_nfl_data(api_string)
-    puts "/******get_nfl_data****"
-    puts "/*****api_string, #{api_string.inspect}"
-    HTTParty.get(api_string)
-end
 
 module ScoreFinder
   class Application < Rails::Application
