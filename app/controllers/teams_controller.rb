@@ -97,6 +97,7 @@ class TeamsController < ApplicationController
       puts "\n*****TESTING 1-2-3!!!!, #{@passinghome.inspect}"
       puts "\n*****TESTING 1-2-3!!!!, #{@player_stats['away_team']['statistics']['passing']['team']['yds'].inspect}"
       puts "\n*****TESTING 1-2-3!!!!, #{@player_stats['away_team']['statistics']['fourth_down_efficiency'].inspect}"
+    #   puts "\n*****tEaM sTaTs!-!-!-!,
     #   puts "\n*****TESTING 1-2-3!!!!, #{@player_stats['away_team']['statistics']['third_down_efficiency'].inspect}"
     #   puts "\n*****TESTING 1-2-3!!!!, #{@player_stats['away_team']['statistics']['third_down_efficiency'].inspect}"
     #   puts "\n*****C'MON MAN!!!!!!!!!!, #{@player_stats['away_team']['statistics']['rushing']['players'].inspect}"
