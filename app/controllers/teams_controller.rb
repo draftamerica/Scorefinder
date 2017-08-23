@@ -1,9 +1,9 @@
+require 'Users/draftamerica/Desktop/WDI FOLDER/FootballProject/ScoreFinder/app/helpers/nfl.rb'
+
 class TeamsController < ApplicationController
   before_action :set_team, only: [:show, :edit, :update, :destroy]
 
   # include NFL
-  require 'Users/draftamerica/Desktop/WDI FOLDER/FootballProject/ScoreFinder/app/helpers/nfl.rb'
-
 
   def homepage
       puts "\n ****homepage*****"
