@@ -48,6 +48,8 @@
 <br>
 <br>
 <br>
+<br>
+<br>
 <p class="gameform">
     GAME &nbsp; SEARCH &nbsp; FORM
 </p>
@@ -62,7 +64,7 @@ Search a scoreboard by week:
 
 <div class="menusubmit">
 <%= form_with url: "/display_weekly_data", local:true do |form| %>
-    <%= form.select(:week, options_for_select(@weeksarray.uniq), {}, :style => "width:250px") %> <br />
+    <%= form.select(:week, options_for_select(@weeksarray.uniq), {}, :style => "width:350px;") %> <br />
     <%= form.submit %>
 <% end %>
 </div>

@@ -9,28 +9,33 @@ a:visited {
     color: blue;
 }
 .awayteam1 > a {
-    color: #9b072c;
+    /*color: #9b072c;*/
+    color: black;
 }
 .hometeam1 >a {
-    color: #9b072c;
+    /*color: #9b072c;*/
+    color: black;
 }
 .mainlogo {
     font-size: 48px;
     font-family: Impact, Helvetica, serif;
     text-align: center;
-    color: #164c04;
-    opacity: 0.75;
-    box-shadow: 10px 10px 10px 25px #1e66db;
-    background-color: #ba4376;
-    transform: skewX(-5.75deg);
-    letter-spacing: 0.15em;
+    border: 1px solid blue;
+    background-color: #e6ecef;
+    /*color: #164c04;*/
+    color: blue;
+    opacity: 0.85;
+    /*box-shadow: 10px 10px 10px 25px #1e66db;*/
+    /*background-color: #ba4376;*/
+    transform: skewX(-3.25deg);
+    letter-spacing: 0.1em;
 }
 .nfllogos {
     position: fixed;
-    height: auto;
+    height: 2000px;
     width: 100%;
     top: -20px;
-    opacity: 0.15;
+    opacity: 0.075;
     z-index: -1;
 }
 .page {
@@ -48,7 +53,7 @@ a:visited {
     opacity: 0.75;
     font-family: Arial;
     font-weight: bold;
-    color: blue;
+    color: black;
     margin: auto;
     font-size: 25px;
 }
@@ -63,29 +68,33 @@ a:visited {
     line-height: 20px;
     margin: auto;
     position: relative;
-    background-color: gold;
+    background-color: silver;
     opacity: 0.75;
     font-family: Arial;
     font-weight: bold;
     color: brown
 }
 .teampick2 {
-    color: brown;
+    color: black;
     font-size: 16px;
 }
 .faveteam {
-    color: black;
+    color: blue;
+}
+.weekbutton {
+    color: green;
 }
 .gameform {
-    box-shadow: 1px 1px 1px 5px red;
-    background-color: green;
+    box-shadow: 1px 1px 1px 5px blue;
+    background-color: #e6ecef;
     color: #160060;
     text-shadow: 0.5px 0.5px orange;
     font-family: "Times New Roman";
     margin: auto;
+    width: 500px;
     position: relative;
     height: 50px;
-    width: auto;
+    /*width: auto;*/
     font-weight: bold;
     opacity: 0.75;
     height: 75px;
@@ -93,12 +102,13 @@ a:visited {
     font-size: 32px;
 }
 .searchform {
-    box-shadow: 1px 1px 1px 2px blue;
+    /*box-shadow: 1px 1px 1px 2px blue;*/
     position: relative;
     margin: auto;
-    font-size: 25px;
+    font-size: 28px;
+    font-weight: bold;
     height: 40px;
-    width: 300px;
+    width: 400px;
     color: black;
     opacity: 0.75;
 }
@@ -147,7 +157,7 @@ a:visited {
 }
 .welcomeweek {
     height: 40px;
-    color: #007a53;
+    /*color: #007a53;*/
     text-shadow: 1px 1px red;
     /*border: 1px #0713f9;*/
     width: 400px;
@@ -156,7 +166,8 @@ a:visited {
     position: relative;
     top: 20px;
     left: -25px;
-    background-color: #ea9875;
+    color: blue;
+    /*background-color: #ea9875;*/
 }
 .away {
     height: 35px;
@@ -171,8 +182,9 @@ a:visited {
     border: 3px solid black;
     padding: 10px;
     margin: 25px;
+    background-color: silver;
     /*background-color: #f4d142;*/
-    background: linear-gradient(white, #f4d142, orange);
+    /*background: linear-gradient(white, #f4d142, orange);*/
 }
 .awayteam {
     float: left;
@@ -215,7 +227,7 @@ a:visited {
     border: 3px solid black;
     padding: 10px;
     opacity: 0.8;
-    background: linear-gradient(white, gray);
+    /*background: linear-gradient(white, gray);*/
 }
 .quart {
     font-size: 20px;
@@ -277,9 +289,10 @@ a:visited {
 }
 .scoringheadbox {
     box-shadow: 1px 1px 3px 3px blue;
-    background: linear-gradient(red, yellow);
-    /*width: 400px;*/
+    /*background: linear-gradient(red, yellow);*/
+    width: 400px;
     margin: auto;
+    background-color: silver;
 }
 .scoringsummary {
     top: -40px;
@@ -287,13 +300,13 @@ a:visited {
     width: 500px;
     font-weight: bold;
     letter-spacing: 0.05em;
-    color: #2A01F5;
-    background-color: #A9EC0E;
+    /*color: #2A01F5;
+    background-color: #A9EC0E;*/
     opacity: 0.9;
     position: relative;
     text-align: center;
     margin: auto;
-    border: 1px solid black;
+    border: 3px solid blue;
 }
 .commenthead {
     font-style: Georgia serif;
@@ -320,10 +333,10 @@ a:visited {
 }*/
 .nfllogos1 {
     position: fixed;
-    height: auto;
+    height: 2000px;
     width: 100%;
     top: -20px;
-    opacity: 0.15;
+    opacity: 0.05;
     z-index: -1;
 }
 .field {
@@ -357,19 +370,21 @@ a:visited {
     font-family: Georgia;
     margin: auto;
     font-weight: bold;
-    color: #ccbb06;
+    color: black;
+    /*color: #ccbb06;*/
 }
 .commentsection {
     position: relative;
     margin: auto;
+    overflow: hidden;
     border: 1px solid black;
     height: 400px;
     width: 600px;
     text-align: center;
     font-size: 15px;
-    color: blue;
-    box-shadow: 5px 10px 50px 20px green;
-    background: linear-gradient(red, yellow);
+    color: black;
+    box-shadow: 5px 10px 50px 20px blue;
+    /*background: linear-gradient(red, yellow);*/
     /*5px 5px 15px 5px #1cd8bb,
     5px 5px 15px 5px #d8971e,
     5px 5px 15px 5px #ced81d;*/
@@ -429,7 +444,7 @@ a:visited {
 }
 .nfllogos2 {
     position: fixed;
-    height: auto;
+    height: 2000px;
     width: 100%;
     top: -20px;
     opacity: 0.05;
@@ -437,8 +452,9 @@ a:visited {
 }
 .topnav {
     position: relative;
-    background-color: #0b09a0;
+    /*background-color: #0b09a0;*/
     overflow: hidden;
+    background-color: #5ebded;
     opacity: 0.7;
 }
 /*.topnav a {
@@ -462,7 +478,7 @@ a:visited {
     margin: 2px;
     padding: 7px 28px;
     text-decoration: none;
-    left: 50px;
+    left: 10px;
     font-size: 20px;
     font-family: Georgia;
     height: 15px;
@@ -478,8 +494,8 @@ a:visited {
     border: 1px solid green;
     box-shadow: 1px 1px 1px 5px orange;
     background-color: black;
-    width: 300px;
-    height: 40px;
+    width: 500px;
+    height: 60px;
     margin: auto;
 }
 .registerform {
@@ -548,7 +564,7 @@ a:visited {
     height: 250px;
     width: 550px;
     position: relative;
-    background-color: orange;
+    background-color: silver;
     left: -140px;
     top: -81px;
     margin: 5px;

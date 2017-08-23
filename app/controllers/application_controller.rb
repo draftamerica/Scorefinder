@@ -3,6 +3,12 @@ class ApplicationController < ActionController::Base
 	before_action :configure_permitted_parameters, if: :devise_controller?
 	before_action :authenticate_user!
 
+	def self.get_nfl_data(api_string)
+        puts "/******get_nfl_data****"
+        puts "/*****api_string, #{api_string.inspect}"
+        HTTParty.get(api_string)
+    end
+
 	def after_sign_in_path_for(resrouce)
 		"/"
 	end

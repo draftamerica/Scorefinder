@@ -1,7 +1,15 @@
 class TeamsController < ApplicationController
   before_action :set_team, only: [:show, :edit, :update, :destroy]
 
-  include NFL
+  require 'json'
+  require 'net/http'
+  module NFL
+      def self.get_nfl_data(api_string)
+          puts "/******get_nfl_data****"
+          puts "/*****api_string, #{api_string.inspect}"
+          HTTParty.get(api_string)
+      end
+  end
 
   def homepage
       puts "\n ****homepage*****"
@@ -96,7 +104,9 @@ class TeamsController < ApplicationController
       puts "\n*****TESTING 1-2-3!!!!, #{@passingaway.inspect}"
       puts "\n*****TESTING 1-2-3!!!!, #{@passinghome.inspect}"
       puts "\n*****TESTING 1-2-3!!!!, #{@player_stats['away_team']['statistics']['passing']['team']['yds'].inspect}"
-      puts "\n*****TESTING 1-2-3!!!!, #{@player_stats['away_team']['statistics']['fourth_down_efficiency'].inspect}"
+      puts "\n*****TESTING 1-2-3!!!!, #{@player_stats['away_team']['statistics']['rushing']['team']['yds'].inspect}"
+      puts "\n*****TESTING 1-2-3!!!!, #{@player_stats['away_team']['statistics']['first_downs']['team'].inspect}"
+    #   puts "\n*****TESTING 1-2-3!!!!, #{@player_stats['away_team']['statistics']['fourth_down_efficiency'].inspect}"
     #   puts "\n*****tEaM sTaTs!-!-!-!,
     #   puts "\n*****TESTING 1-2-3!!!!, #{@player_stats['away_team']['statistics']['third_down_efficiency'].inspect}"
     #   puts "\n*****TESTING 1-2-3!!!!, #{@player_stats['away_team']['statistics']['third_down_efficiency'].inspect}"
