@@ -2,6 +2,7 @@ class TeamsController < ApplicationController
   before_action :set_team, only: [:show, :edit, :update, :destroy]
 
   # include NFL
+  require 'helpers/NFL.rb'
 
   def homepage
       puts "\n ****homepage*****"
