@@ -1,5 +1,3 @@
-require 'Users/draftamerica/Desktop/WDI FOLDER/FootballProject/ScoreFinder/app/helpers/nfl.rb'
-
 class TeamsController < ApplicationController
   before_action :set_team, only: [:show, :edit, :update, :destroy]
 
@@ -154,7 +152,7 @@ end
         nfl_url += nfl_season + "/schedule."
         nfl_url += format + "?api_key="
         nfl_url += ENV["NFL_key"]
-        @nfl_data = NFL.get_nfl_data(nfl_url)
+        @nfl_data = self.get_nfl_data(nfl_url)
 
         @nfl_data['weeks'].each do |week|
             # puts "/n******* week: #{week}"
