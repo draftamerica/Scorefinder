@@ -91,13 +91,15 @@ class TeamsController < ApplicationController
       @rushinghome = @player_stats['home_team']['statistics']['rushing']['players']
       @passingaway = @player_stats['away_team']['statistics']['passing']['players']
       @passinghome = @player_stats['home_team']['statistics']['passing']['players']
+      @awayyards = (@player_stats['away_team']['statistics']['passing']['team']['yds']) + (@player_stats['away_team']['statistics']['rushing']['team']['yds'])
       puts "\n*****TESTING 1-2-3!!!!, #{@rushingaway[0..10].inspect}"
       puts "\n*****TESTING 1-2-3!!!!, #{@rushinghome.inspect}"
       puts "\n*****TESTING 1-2-3!!!!, #{@passingaway.inspect}"
       puts "\n*****TESTING 1-2-3!!!!, #{@passinghome.inspect}"
       puts "\n*****TESTING 1-2-3!!!!, #{@player_stats['away_team']['statistics']['passing']['team']['yds'].inspect}"
       puts "\n*****TESTING 1-2-3!!!!, #{@player_stats['away_team']['statistics']['rushing']['team']['yds'].inspect}"
-      puts "\n*****TESTING 1-2-3!!!!, #{@player_stats['away_team']['statistics']['first_downs']['team'].inspect}"
+      puts "\n*****TESTING 1-2-3!!!!, #{@player_stats['away_team']['statistics']['first_downs']['team']['num'].inspect}"
+      puts "\n*****TESTING 1-2-3!!!!, #{@awayyards.inspect}"
     #   puts "\n*****TESTING 1-2-3!!!!, #{@player_stats['away_team']['statistics']['fourth_down_efficiency'].inspect}"
     #   puts "\n*****tEaM sTaTs!-!-!-!,
     #   puts "\n*****TESTING 1-2-3!!!!, #{@player_stats['away_team']['statistics']['third_down_efficiency'].inspect}"
@@ -128,6 +130,49 @@ end
       @user.update_attribute(:team_id, user_params[:team_id])
       redirect_to "/"
   end
+
+  def get_nfl_data
+      puts "/n*****get_nfl_data*****"
+
+# https://api.sportradar.us/nfl-{access_level}{version}/league/{year}/{month}/{day}/changes.{format}?api_key={your_api_key}
+# https://api.sportradar.us/nfl-{access_level}{version}/games/{year}/{nfl_season}/schedule.{format}?api_key={your_api_key}
+# https://api.sportradar.us/nfl-ot2/games/2016/REG/schedule.json?api_key=2k82hqcedjp8uf9cksbbx773
+
+        base_url = "https://api.sportradar.us/nfl-"
+        access_level = "ot"
+        version = 2
+        year = 2016
+        nfl_season = "REG"
+        format = "json"
+
+        nfl_url = base_url
+        nfl_url += access_level
+        nfl_url += version.to_s + "/games/"
+        nfl_url += year.to_s + "/"
+        nfl_url += nfl_season + "/schedule."
+        nfl_url += format + "?api_key="
+        nfl_url += ENV["NFL_key"]
+        @nfl_data = NFL.get_nfl_data(nfl_url)
+
+        @nfl_data['weeks'].each do |week|
+            # puts "/n******* week: #{week}"
+            week['games'].each do |game|
+                # puts "\n ******* game: #{game}"
+                team_values = {
+                    "week" => week['title'],
+                    "away_team" => game['away']['name'],
+                    "home_team" => game['home']['name'],
+                    "away_points" => game['scoring']['away_points'],
+                    "home_points" => game['scoring']['home_points'],
+                }
+                puts "\n ****team_values, #{team_values}****"
+
+                @scoreboard = Scoreboard.new(team_values)
+
+            end
+        end
+    end
+
 
   def get_stats(awaytm, hometm, whichweek)
       puts "\n ****get_stats*****"
@@ -182,48 +227,6 @@ end
       game_stats = NFL.get_nfl_data(nfl_url)
       return game_stats
   end
-
-  def get_nfl_data
-      puts "/n*****get_nfl_data*****"
-
-# https://api.sportradar.us/nfl-{access_level}{version}/league/{year}/{month}/{day}/changes.{format}?api_key={your_api_key}
-# https://api.sportradar.us/nfl-{access_level}{version}/games/{year}/{nfl_season}/schedule.{format}?api_key={your_api_key}
-# https://api.sportradar.us/nfl-ot2/games/2016/REG/schedule.json?api_key=2k82hqcedjp8uf9cksbbx773
-
-        base_url = "https://api.sportradar.us/nfl-"
-        access_level = "ot"
-        version = 2
-        year = 2016
-        nfl_season = "REG"
-        format = "json"
-
-        nfl_url = base_url
-        nfl_url += access_level
-        nfl_url += version.to_s + "/games/"
-        nfl_url += year.to_s + "/"
-        nfl_url += nfl_season + "/schedule."
-        nfl_url += format + "?api_key="
-        nfl_url += NFL_key
-        @nfl_data = NFL.get_nfl_data(nfl_url)
-
-        @nfl_data['weeks'].each do |week|
-            # puts "/n******* week: #{week}"
-            week['games'].each do |game|
-                # puts "\n ******* game: #{game}"
-                team_values = {
-                    "week" => week['title'],
-                    "away_team" => game['away']['name'],
-                    "home_team" => game['home']['name'],
-                    "away_points" => game['scoring']['away_points'],
-                    "home_points" => game['scoring']['home_points'],
-                }
-                puts "\n ****team_values, #{team_values}****"
-
-                @scoreboard = Scoreboard.new(team_values)
-
-            end
-        end
-    end
 
   # GET /teams
   # GET /teams.json

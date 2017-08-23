@@ -22,12 +22,13 @@ a:visited {
     text-align: center;
     border: 1px solid blue;
     background-color: #e6ecef;
+    margin: auto;
     /*color: #164c04;*/
     color: blue;
     opacity: 0.85;
     /*box-shadow: 10px 10px 10px 25px #1e66db;*/
     /*background-color: #ba4376;*/
-    transform: skewX(-3.25deg);
+    /*transform: skewX(-3.25deg);*/
     letter-spacing: 0.1em;
 }
 .nfllogos {
