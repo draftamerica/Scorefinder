@@ -8,6 +8,13 @@
     </div>
 <% end %>
 
+<span class="faveteam"><%= @user_team[:team_name] %></span>
+
+<strong>
+    Username:
+    <%= comment.user_id %> <br>
+</strong>
+
 <div class="passingstats">
     <p>Individual Passing Stats</p>
     <p>Player</p>

@@ -122,10 +122,11 @@
     <br>
     <% @comments.each do |comment| %>
     <br>
-    <strong>
-        User ID:
-        <%= comment.user_id %> <br>
-    </strong>
+    <% @users.each do |user| %>
+        <% if comment.user_id == user.id %>
+        <strong><%= user.username %></strong><br>
+        <% end %>
+    <% end %>
         <%= comment.content %> <br>
     <% end %>
     </p>

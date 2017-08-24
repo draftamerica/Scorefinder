@@ -12,7 +12,7 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field2">
+  <div class="field">
     <%= f.label :firstname %><br />
     <%= f.text_field :firstname, autofocus: true %>
   </div>
@@ -52,8 +52,7 @@
     <br>
     <br>
     <br>
-    <br>
-    <br>
+
 
   </div>
 <% end %>
@@ -63,5 +62,6 @@
     Already a user?
     <%= render "devise/shared/links" %>
 </div>
+<br>
 <br>
 <br>

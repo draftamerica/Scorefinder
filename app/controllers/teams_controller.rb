@@ -67,6 +67,7 @@ class TeamsController < ApplicationController
       end
       @team = Team.where(team_name: [awayteam])
       @team2 = Team.where(team_name: [hometeam])
+      @users = User.all
 
       @awaytm = Team.where(team_name:awayteam)
       @hometm = Team.where(team_name:hometeam)
