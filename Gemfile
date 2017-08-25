@@ -22,6 +22,7 @@ gem 'rb-readline'
 gem 'devise'
 gem 'httparty'
 gem 'nokogiri'
+gem 'safe_attributes'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

@@ -87,7 +87,7 @@ end
         nfl_url += year.to_s + "/"
         nfl_url += nfl_season + "/schedule."
         nfl_url += format + "?api_key="
-        nfl_url += NFL_key
+        nfl_url += "2k82hqcedjp8uf9cksbbx773"
         @nfl_data = NFL.get_nfl_data(nfl_url)
 
         @nfl_data['weeks'].each do |week|

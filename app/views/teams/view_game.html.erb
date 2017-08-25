@@ -124,7 +124,7 @@
     <br>
     <% @users.each do |user| %>
         <% if comment.user_id == user.id %>
-        <strong><%= user.username %></strong><br>
+        <strong><%= user.username %></strong>
         <% end %>
     <% end %>
         <%= comment.content %> <br>
