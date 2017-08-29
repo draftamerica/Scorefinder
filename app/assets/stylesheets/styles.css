@@ -126,9 +126,7 @@ a:visited {
 }
 .welcomeweek {
     height: 40px;
-    /*color: #007a53;*/
     text-shadow: 1px 1px blue;
-    /*border: 1px #0713f9;*/
     width: 400px;
     text-align: center;
     margin: auto;

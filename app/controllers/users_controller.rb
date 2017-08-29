@@ -69,11 +69,6 @@ end
 
   def get_nfl_data
       puts "/n*****get_nfl_data*****"
-
-# https://api.sportradar.us/nfl-{access_level}{version}/league/{year}/{month}/{day}/changes.{format}?api_key={your_api_key}
-# https://api.sportradar.us/nfl-{access_level}{version}/games/{year}/{nfl_season}/schedule.{format}?api_key={your_api_key}
-# https://api.sportradar.us/nfl-ot2/games/2016/REG/schedule.json?api_key=2k82hqcedjp8uf9cksbbx773
-
         base_url = "https://api.sportradar.us/nfl-"
         access_level = "ot"
         version = 2

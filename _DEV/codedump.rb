@@ -42,6 +42,18 @@
 # https://api.sportradar.us/nfl-{access_level}{version}/games/{year}/{nfl_season}/schedule.{format}?api_key={your_api_key}
 # https://api.sportradar.us/nfl-ot2/games/2016/REG/schedule.json?api_key=2k82hqcedjp8uf9cksbbx773
 
+
+# https://api.sportradar.us/nfl-{access_level}{version}/league/{year}/{month}/{day}/changes.{format}?api_key={your_api_key}
+# https://api.sportradar.us/nfl-{access_level}{version}/games/{year}/{nfl_season}/schedule.{format}?api_key={your_api_key}
+# https://api.sportradar.us/nfl-ot2/games/2016/REG/schedule.json?api_key=2k82hqcedjp8uf9cksbbx773
+
+
+puts "\n**** view_team ******"
+puts "\n ***** params.inspect, #{params.inspect} ******"
+puts "\n ****** @logo, #{@logo.inspect}"
+
+
+
 puts "\n ****team_values, #{team_values}****"
 
 

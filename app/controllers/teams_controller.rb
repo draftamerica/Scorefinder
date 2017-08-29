@@ -22,11 +22,8 @@ class TeamsController < ApplicationController
   end
 
   def view_team
-      puts "\n**** view_team ******"
-      puts "\n ***** params.inspect, #{params.inspect} ******"
       @currentteam = Team.find(params[:team_id])
       @team_id = params[:team_id]
-      puts "\n ****** @logo, #{@logo.inspect}"
   end
 
   def view_game
