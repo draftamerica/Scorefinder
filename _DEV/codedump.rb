@@ -1,3 +1,65 @@
+#From Line 4 of Teams Controller and Line 10 of Users Controller
+# include NFL
+
+# def get_weekly_data
+#     puts "\n ***** get_weekly_data ******"
+#     puts "\n ***** params.inspect, #{params.inspect} ******"
+#     ok_params = week_params
+#     puts "\n *****ok_params[:week], #{ok_params[:week].inspect} ******"
+#     @currentweek = Scoreboard.where(:away_team, ok_params[:away_team])
+#     puts "\n*****@currentweek.length.inspect, #{@currentweek.length.inspect}"
+#
+#     @currentweek.each do |game|
+#         puts "\n*****@game[:away_team].inspect, #{@game[:away_team].inspect}"
+#   end
+#
+#     render "display_weekly_data"
+#   end
+
+
+#   puts "\n*****TESTING 1-2-3!!!!, #{@rushingaway[0..10].inspect}"
+#   puts "\n*****TESTING 1-2-3!!!!, #{@rushinghome.inspect}"
+#   puts "\n*****TESTING 1-2-3!!!!, #{@passingaway.inspect}"
+#   puts "\n*****TESTING 1-2-3!!!!, #{@passinghome.inspect}"
+#   puts "\n*****TESTING 1-2-3!!!!, #{@player_stats['away_team']['statistics']['fourth_down_efficiency'].inspect}"
+#   puts "\n*****tEaM sTaTs!-!-!-!,
+#   puts "\n*****TESTING 1-2-3!!!!, #{@player_stats['away_team']['statistics']['third_down_efficiency'].inspect}"
+#   puts "\n*****TESTING 1-2-3!!!!, #{@player_stats['away_team']['statistics']['third_down_efficiency'].inspect}"
+#   puts "\n*****C'MON MAN!!!!!!!!!!, #{@player_stats['away_team']['statistics']['rushing']['players'].inspect}"
+#   puts "\n*****TESTING-1-2-3!!!!, #{@player_stats['away_team']['statistics']['rushing']['players'][1]['name'].inspect}"
+#   puts "\n ****@game_stats===== METHOD!+=====, #{@game_stats['scoring_drives'][0]['scores'][0]['summary'].inspect}"
+
+#   puts "\n *****@player stats, #{@player_stats['home_team']['statistics']['third_down_efficiency'].inspect}"
+#   puts "\n *****@player stats, #{@player_stats['home_team']['statistics']['rushing']['players'][0]['name'].inspect}"
+#   puts "\n *****TESTING!!!!!****, #{@player_stats['away_team']['statistics']['rushing']['players']['name'].inspect}"
+
+
+#   @currentweek.each do |game|
+#     #   puts "\n*****game[:away_team].inspect, #{game[:away_team].inspect}"
+#   end
+
+# https://api.sportradar.us/nfl-{access_level}{version}/league/{year}/{month}/{day}/changes.{format}?api_key={your_api_key}
+# https://api.sportradar.us/nfl-{access_level}{version}/games/{year}/{nfl_season}/schedule.{format}?api_key={your_api_key}
+# https://api.sportradar.us/nfl-ot2/games/2016/REG/schedule.json?api_key=2k82hqcedjp8uf9cksbbx773
+
+puts "\n ****team_values, #{team_values}****"
+
+
+puts "\n ******* @whichweek, #{@whichweek.inspect}"
+puts "\n ******* @awaytm, #{@awaytm.inspect}"
+puts "\n ******* @hometm, #{@hometm.inspect}"
+puts "\n ******* @awaytm[0][:abbr], #{@awaytm[0][:abbr].inspect}"
+
+
+puts "\n ****@game_stats, #{@game_stats.inspect}"
+
+
+puts "\n*****TESTING 1-2-3!!!!, #{@player_stats['away_team']['statistics']['passing']['team']['yds'].inspect}"
+puts "\n*****TESTING 1-2-3!!!!, #{@player_stats['away_team']['statistics']['rushing']['team']['yds'].inspect}"
+puts "\n*****TESTING 1-2-3!!!!, #{@player_stats['away_team']['statistics']['first_downs']['team']['num'].inspect}"
+puts "\n*****TESTING 1-2-3!!!!, #{@awayyards.inspect}"
+
+
 <div class="scoring">
 <% @game_stats['away_team']['scoring'].each do |quarter| %>
     <div id="quarter">

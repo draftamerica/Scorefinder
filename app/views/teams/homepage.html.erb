@@ -1,8 +1,3 @@
-<!-- <%= link_to "Sign up", new_user_registration_path %>
-<%= link_to "Sign in", new_user_session_path %>
-<%= link_to "Teams", teams_path %>
-<%= link_to "Home", root_path %> -->
-
 <div class="topnav">
     <div id="myTopnav"><%= link_to "Home", root_path %></div>
     <div id="myTopnav"><a href="mailto:draftamerica@gmail.com">Contact</a></div>
@@ -17,21 +12,21 @@
 <div class="mainlogo">
     NFL Score Finder
 </div>
+
 <br>
 <br>
 <br>
 
 <div class="page">
-<!-- <h1 class="h1" align="center"> Hello again, <%= current_user.username %>! </h1> -->
 <br>
 <p class="favoriteteam"> Pick a favorite team! </p>
 <br>
 
 <div class="teamform">
-<%= form_with url: "/save_team" do |form| %>
-    <%= form.select(:team_id, options_for_select(@teamsarray), {}, :style => "width:350px") %> <br /> <br>
-    <%= form.submit %>
-<% end %>
+    <%= form_with url: "/save_team" do |form| %>
+        <%= form.select(:team_id, options_for_select(@teamsarray), {}, :style => "width:350px") %> <br /> <br>
+        <%= form.submit %>
+    <% end %>
 </div>
 <br>
 <br>
@@ -61,24 +56,21 @@
 <br>
 
 <p class="searchform">
-Search a scoreboard by week:
+    Search a scoreboard by week:
 </p>
 <br>
 <br>
 
 <div class="menusubmit">
-<%= form_with url: "/display_weekly_data", local:true do |form| %>
-    <%= form.select(:week, options_for_select(@weeksarray.uniq), {}, :style => "width:350px;") %> <br />
-    <%= form.submit %>
-<% end %>
+    <%= form_with url: "/display_weekly_data", local:true do |form| %>
+        <%= form.select(:week, options_for_select(@weeksarray.uniq), {}, :style => "width:350px;") %> <br />
+        <%= form.submit %>
+    <% end %>
 </div>
 <br>
 
 <div>
+
 <p class="catch">Odell Beckham Jr.: "The Catch". Week 12, 2014.</p>
 <img class="beckham" src="https://blog-blogmediainc.netdna-ssl.com/upload/SportsBlogcom/2658658/0207117001436797172_filepicker.jpg">
 </div>
-<!--
-<p class="catch2">Marvin Harrison: concentration at its finest. Week 14, 2003.</p>
-<img class="harrison" src="https://metalandsports.files.wordpress.com/2013/10/marvin-harrison-01.jpg">
-</div> -->

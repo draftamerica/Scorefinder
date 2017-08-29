@@ -9,11 +9,9 @@ a:visited {
     color: blue;
 }
 .awayteam1 > a {
-    /*color: #9b072c;*/
     color: black;
 }
 .hometeam1 >a {
-    /*color: #9b072c;*/
     color: black;
 }
 .mainlogo {
@@ -23,12 +21,8 @@ a:visited {
     border: 1px solid blue;
     background-color: #e6ecef;
     margin: auto;
-    /*color: #164c04;*/
     color: blue;
     opacity: 0.85;
-    /*box-shadow: 10px 10px 10px 25px #1e66db;*/
-    /*background-color: #ba4376;*/
-    /*transform: skewX(-3.25deg);*/
     letter-spacing: 0.1em;
 }
 .nfllogos {
@@ -46,11 +40,7 @@ a:visited {
     text-align: center;
 }
 .favoriteteam {
-    /*box-shadow: 1px 1px 1px 3px blue;
-    height: 30px;
-    width: 300px;*/
     position: relative;
-    /*background-color: gold;*/
     opacity: 0.75;
     font-family: Arial;
     font-weight: bold;
@@ -62,7 +52,6 @@ a:visited {
     color: green;
 }
 .teampick {
-    /*box-shadow: 1px 1px 1px 3px blue;*/
     font-size: 25px;
     height: 90px;
     width: 300px;
@@ -96,7 +85,6 @@ a:visited {
     width: 500px;
     position: relative;
     height: 50px;
-    /*width: auto;*/
     font-weight: bold;
     opacity: 0.75;
     height: 75px;
@@ -104,7 +92,6 @@ a:visited {
     font-size: 32px;
 }
 .searchform {
-    /*box-shadow: 1px 1px 1px 2px blue;*/
     position: relative;
     margin: auto;
     font-size: 28px;
@@ -130,26 +117,6 @@ a:visited {
     width: 500px;
     opacity: 0.8;
 }
-/*.catch2 {
-    position: relative;
-    top: -340px;
-    left: 380px;
-}
-.harrison {
-    position: relative;
-    left: 375px;
-    top: -355px;
-    height: 275px;
-    width: 400px;
-}*/
-/*.scorespage {
-    margin: px;
-}*/
-/*.scorescontainer {
-    position: relative;
-    height: 100%;
-    width: auto;
-}*/
 .scorespage {
     display: inline-block;
     position: relative;
@@ -169,7 +136,6 @@ a:visited {
     top: 25px;
     left: -8px;
     color: black;
-    /*background-color: #ea9875;*/
 }
 .away {
     height: 35px;
@@ -185,8 +151,6 @@ a:visited {
     padding: 10px;
     margin: 25px;
     background-color: silver;
-    /*background-color: #f4d142;*/
-    /*background: linear-gradient(white, #f4d142, orange);*/
 }
 .awayteam {
     float: left;
@@ -229,7 +193,6 @@ a:visited {
     border: 3px solid black;
     padding: 10px;
     opacity: 0.8;
-    /*background: linear-gradient(white, gray);*/
 }
 .quart {
     font-size: 20px;
@@ -283,15 +246,11 @@ a:visited {
     top: -15px;
     text-align: center;
     margin: 50px;
-    /*left: 215px;
-    margin: 2px;*/
-    /*left: 220px;*/
     font-size: 22px;
     text-shadow: 1px 1px green;
 }
 .scoringheadbox {
     box-shadow: 1px 1px 3px 3px blue;
-    /*background: linear-gradient(red, yellow);*/
     width: 400px;
     margin: auto;
     background-color: silver;
@@ -302,13 +261,28 @@ a:visited {
     width: 500px;
     font-weight: bold;
     letter-spacing: 0.05em;
-    /*color: #2A01F5;
-    background-color: #A9EC0E;*/
     opacity: 0.9;
     position: relative;
     text-align: center;
     margin: auto;
     border: 3px solid blue;
+}
+.awayteamstats {
+    position: relative;
+    width: 400px;
+    border: 1px solid blue;
+}
+#yards {
+    position: relative;
+    float: right;
+    text-align: right;
+    font-size: 15px;
+}
+#yard {
+    position: relative;
+    float: left;
+    text-align: left;
+    font-size: 15px;
 }
 .commenthead {
     font-style: Georgia serif;
@@ -316,23 +290,9 @@ a:visited {
     text-align: center;
     font-weight: bold;
     height: 100px;
-    /*color: #ccc90a;*/
     text-shadow: 1px 1px white;
     margin: 50px;
-    /*text-align: center;
-    margin: auto;*/
 }
-/*.commenthead > p {
-    position: relative;
-    text-align: center;
-}*/
-/*#commentheads {
-    text-align: center;
-    position: relative;
-    color: blue;
-    font-weight: bold;
-    font-size: 24px;
-}*/
 .nfllogos1 {
     position: fixed;
     height: 2000px;
@@ -373,7 +333,6 @@ a:visited {
     margin: auto;
     font-weight: bold;
     color: black;
-    /*color: #ccbb06;*/
 }
 .commentsection {
     position: relative;
@@ -386,13 +345,8 @@ a:visited {
     font-size: 15px;
     color: black;
     box-shadow: 5px 10px 50px 20px blue;
-    /*background: linear-gradient(red, yellow);*/
-    /*5px 5px 15px 5px #1cd8bb,
-    5px 5px 15px 5px #d8971e,
-    5px 5px 15px 5px #ced81d;*/
 }
 .teaminfo {
-    /*border: 3px solid green;*/
     height: 200px;
     width: 400px;
     padding: 15px;
@@ -400,7 +354,6 @@ a:visited {
     font-size: 16px;
     font-family: Georgia;
     font-weight: bold;
-    /*text-align: center;*/
 }
 .teamname {
     position: relative;
@@ -410,7 +363,6 @@ a:visited {
     margin: 0;
     font-family: Verdana serif;
     letter-spacing: 0.1em;
-    /*text-shadow: 1px 1px orange;*/
 }
 #teamstuff {
     float: right;
@@ -421,7 +373,6 @@ a:visited {
     opacity: 0.8;
 }
 #teamdata {
-    /*border: 1px solid black;*/
     height: 200px;
     width: 400px;
 }
@@ -442,7 +393,6 @@ a:visited {
     top: -205px;
     z-index: -1;
     background-repeat: repeat;
-    /*border-image-repeat: stretch|repeat|round|initial|inherit;*/
 }
 .teamlogo2 {
     position: relative;
@@ -453,7 +403,6 @@ a:visited {
     top: -21px;
     z-index: -1;
     background-repeat: repeat;
-    /*border-image-repeat: stretch|repeat|round|initial|inherit;*/
 }
 .nfllogos2 {
     position: fixed;
@@ -465,25 +414,10 @@ a:visited {
 }
 .topnav {
     position: relative;
-    /*background-color: #0b09a0;*/
     overflow: hidden;
     background-color: #1c8dea;
     opacity: 0.7;
 }
-/*.topnav a {
-    margin: auto;
-    position: relative;
-    left: 460px;
-    display: inline-block;
-    color: #f2f2f2;
-    /*text-align: center;
-    margin: 7px;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 20px;
-    font-family: Georgia;
-    border: 1px solid green;*/
-/*}*/
 #myTopnav {
     position: relative;
     display: block;
@@ -602,7 +536,6 @@ a:visited {
     top: 5px;
     height: 100px;
     width: 350px;
-    /*border: 1px solid blue;*/
 }
 .quarterstable {
     position: relative;
@@ -662,7 +595,6 @@ a:visited {
 }
 .quarterpoints {
     float: left;
-    /*margin: auto;*/
     text-align: center;
     position: relative;
     display: flex;
@@ -684,58 +616,3 @@ a:visited {
     font-size: 25px;
     font-weight: bold;
 }
-/*@media screen and (max-width: 1144px) {
-    #myTopnav {
-        position: relative;
-        display: flex;
-        text-align: center;
-        margin: 2px;
-        padding: 7px 12px;
-        text-decoration: none;
-        left: 500px;
-        font-size: 20px;
-        font-family: Georgia;
-        height: 15px;
-        width: 350px;
-        top: -15px;
-        line-height: 15px;
-    }
-}*/
-/*@media screen and (max-width: 667px) {
-    #myTopnav {
-        position: relative;
-        text-align: center;
-        margin: auto;
-        padding: 7px 12px;
-        text-decoration: none;
-        left: 125px;
-        font-size: 20px;
-        font-family: Georgia;
-        height: 15px;
-        width: 350px;
-        top: -15px;
-        line-height: 15px;
-    }
-}*/
-/*#quarterpointz {
-    float: left;
-    position: relative;
-    display: inline-block;
-}
-/*#quarter {
-    display: inline;
-    float: left;
-    position: absolute;
-    top: 50px;
-    border: 1px solid blue;
-    height: 40px;
-    width: 150px;
-}*/
-/*#points {
-    display: inline-block;
-    float: left;
-    position: absolute;
-    border: 1px solid blue;
-    height: 40px;
-    width: 150px;
-}*/

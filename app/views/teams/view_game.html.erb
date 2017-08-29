@@ -21,16 +21,16 @@
                     <th class="quart">OT &nbsp; </th>
                     <tr>
                         <% @game_stats['away_team']['scoring'].each do |quarter| %>
-                        <div class="quarterpoints"><td><%= quarter['points'] %><br><br></td></div>
-                    <% end %>
+                            <div class="quarterpoints"><td><%= quarter['points'] %><br><br></td></div>
+                        <% end %>
                     </tr>
 
-                <tr>
-                    <% @game_stats['home_team']['scoring'].each do |quarter| %>
-                        <div class="quarterpoints"><td><%= quarter['points'] %> </td></div>
-                    <% end %>
-                </tr>
-            </table>
+                    <tr>
+                        <% @game_stats['home_team']['scoring'].each do |quarter| %>
+                            <div class="quarterpoints"><td><%= quarter['points'] %> </td></div>
+                        <% end %>
+                    </tr>
+                </table>
 
 
                 <% if @game_stats['away_team']['scoring'].length == 4 %>
@@ -39,16 +39,14 @@
             </tr>
                 <br>
 
-                <!-- <div class="hometeampoints"> -->
                 <% if @game_stats['away_team']['scoring'].length == 4 %>
                     <td>&nbsp;</td>
                 <% end %>
-                <!-- </div> -->
             </div>
 
             <div class="away1">
                 <div class="awayteam1">
-                        <a href="/view_team/<%= @team[0][:id]%>"><%= @currentgame[:away_team] %> </a> &nbsp;
+                    <a href="/view_team/<%= @team[0][:id]%>"><%= @currentgame[:away_team] %> </a> &nbsp;
                 </div>
                 <div class="awaypoints1">
                     <%= @currentgame[:away_points] %> </br> <br>
@@ -60,7 +58,8 @@
                 </div>
                 <div class="homepoints1">
                     <%= @currentgame[:home_points] %> </br> <br>
-                </div> </br>
+                </div>
+                </br>
             </div>
         </div>
     </div>
@@ -69,9 +68,9 @@
 </p>
 
 <div class="scoringheadbox">
-<div class="scoringhead">
-    SCORING SUMMARY
-</div>
+    <div class="scoringhead">
+        SCORING SUMMARY
+    </div>
 </div>
 
 <div class="scoringsummary">
@@ -80,35 +79,46 @@
     <% end %>
 </div>
 
+<div class="awayteamstats">
+    <div id="yard">TOTAL YARDS</div>
+    <div id="yards"><br><%= @awayyards %></div><br>
+    <div id="yard">PASSING YARDS</div>
+    <div id="yards"><br><%= @awaypassyards %></div><br>
+    <div id="yard">RUSHING YARDS</div>
+    <div id="yards"><br><%= @awayrushyards %></div><br>
+    <div id="yard">FIRST DOWNS</div>
+    <div id="yards"><br><%= @awayfirstdowns %></div><br>
+</div>
+
 <div class="commenthead">
     Were you at this game? Did you watch it? Share your thoughts here!
 </div>
 
 <div class="commentform">
-<%= form_with(model:[current_user, @comment], local:true) do |form| %>
-    <div class="field3">
-        <div class="titletitle">
-        <%= form.label :title %>
+    <%= form_with(model:[current_user, @comment], local:true) do |form| %>
+        <div class="field3">
+            <div class="titletitle">
+            <%= form.label :title %>
+            </div>
+            <br>
+            <div class="titlebox">
+            <%= form.text_field :title %>
+            </div>
+            <br>
+            <div class="commenttitle">
+            <%= form.label :comment %>
+            </div>
+            <br>
+            <%= form.text_area :content, :cols => "88", :rows => "7" %>
+            <br>
+            <%= form.hidden_field :scoreboard_id, value: @scoreboard_id %>
+            <br>
+            <div class="actions3">
+            <%= form.submit %>
+            </div>
         </div>
-        <br>
-        <div class="titlebox">
-        <%= form.text_field :title %>
-        </div>
-        <br>
-        <div class="commenttitle">
-        <%= form.label :comment %>
-        </div>
-        <br>
-        <%= form.text_area :content, :cols => "88", :rows => "7" %>
-        <br>
-        <%= form.hidden_field :scoreboard_id, value: @scoreboard_id %>
-        <br>
-        <div class="actions3">
-        <%= form.submit %>
-        </div>
-    </div>
 </div>
-<% end %>
+    <% end %>
 <br>
 <br>
 
@@ -133,14 +143,7 @@
 </div>
 <br>
 <br>
-
-<div class="teamstats">
-</div>
-
 <br>
-
-
-
 <br>
 <br>
 <br>
