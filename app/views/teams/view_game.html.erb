@@ -77,8 +77,11 @@
     <% @game_stats['scoring_drives'].each do |scores| %>
         -><%= scores['scores'][0]['summary'] %><-<br><br>
     <% end %>
+    <br>
+    <br>
 
 <div class="awayteamstats">
+    <div id="yardaway1"><%= @currentgame[:away_team] %></div><br>
     <div id="yardaway">TOTAL YARDS</div>
     <div id="yardsaway"><br><%= @awayyards %></div><br>
     <div id="yardaway">PASSING YARDS</div>
@@ -90,6 +93,7 @@
 </div>
 
 <div class="hometeamstats">
+    <div id="yardhome1"><%= @currentgame[:home_team] %></div><br>
     <div id="yardhome">TOTAL YARDS</div>
     <div id="yardshome"><br><%= @homeyards %></div><br>
     <div id="yardhome">PASSING YARDS</div>

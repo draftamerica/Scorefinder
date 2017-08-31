@@ -274,12 +274,18 @@ a:visited {
 }
 #yardaway {
     position: relative;
-    float: left;
-    text-align: left;
+    text-align: center;
     font-size: 15px;
+}
+#yardaway1 {
+    position: relative;
+    text-align: center;
+    font-size: 17px;
+    text-decoration: underline;
 }
 #yardsaway {
     position: relative;
+    text-align: center;
     font-size: 15px;
 }
 .hometeamstats {
@@ -291,13 +297,19 @@ a:visited {
 }
 #yardhome {
     position: relative;
-    float: left;
-    text-align: left;
+    text-align: center;
     font-size: 15px;
+}
+#yardhome1 {
+    position: relative;
+    text-align: center;
+    font-size: 17px;
+    text-decoration: underline;
 }
 #yardshome {
     position: relative;
     font-size: 15px;
+    text-align: center;s
 }
 .commenthead {
     font-style: Georgia serif;

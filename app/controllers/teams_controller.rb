@@ -145,8 +145,7 @@ class TeamsController < ApplicationController
       nfl_url += format + "?api_key="
       nfl_url += "n4h5vx4dp8njm87pp8ahsdr4"
       puts "\*****nfl_url, #{nfl_url.inspect}"
-      game_stats = NFL.get_nfl_data(nfl_url)
-      return game_stats
+      NFL.get_nfl_data(nfl_url)
   end
 
   def get_players(awaytm, hometm, whichweek)
