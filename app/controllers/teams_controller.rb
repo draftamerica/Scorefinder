@@ -60,6 +60,11 @@ class TeamsController < ApplicationController
       @awaypassyards = @player_stats['away_team']['statistics']['passing']['team']['yds']
       @awayrushyards = @player_stats['away_team']['statistics']['rushing']['team']['yds']
       @awayfirstdowns = @player_stats['away_team']['statistics']['first_downs']['team']['num']
+      @homeyards = (@player_stats['home_team']['statistics']['passing']['team']['yds']) + (@player_stats['home_team']['statistics']['rushing']['team']['yds'])
+      @homepassyards = @player_stats['home_team']['statistics']['passing']['team']['yds']
+      @homerushyards = @player_stats['home_team']['statistics']['rushing']['team']['yds']
+      @homefirstdowns = @player_stats['home_team']['statistics']['first_downs']['team']['num']
+
   end
 
   def display_weekly_data

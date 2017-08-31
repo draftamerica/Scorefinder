@@ -69,7 +69,7 @@
 
 <div class="scoringheadbox">
     <div class="scoringhead">
-        SCORING SUMMARY
+        SCORING &amp; STATS
     </div>
 </div>
 
@@ -77,18 +77,31 @@
     <% @game_stats['scoring_drives'].each do |scores| %>
         -><%= scores['scores'][0]['summary'] %><-<br><br>
     <% end %>
-</div>
 
 <div class="awayteamstats">
-    <div id="yard">TOTAL YARDS</div>
-    <div id="yards"><br><%= @awayyards %></div><br>
-    <div id="yard">PASSING YARDS</div>
-    <div id="yards"><br><%= @awaypassyards %></div><br>
-    <div id="yard">RUSHING YARDS</div>
-    <div id="yards"><br><%= @awayrushyards %></div><br>
-    <div id="yard">FIRST DOWNS</div>
-    <div id="yards"><br><%= @awayfirstdowns %></div><br>
+    <div id="yardaway">TOTAL YARDS</div>
+    <div id="yardsaway"><br><%= @awayyards %></div><br>
+    <div id="yardaway">PASSING YARDS</div>
+    <div id="yardsaway"><br><%= @awaypassyards %></div><br>
+    <div id="yardaway">RUSHING YARDS</div>
+    <div id="yardsaway"><br><%= @awayrushyards %></div><br>
+    <div id="yardaway">FIRST DOWNS</div>
+    <div id="yardsaway"><br><%= @awayfirstdowns %></div><br>
 </div>
+
+<div class="hometeamstats">
+    <div id="yardhome">TOTAL YARDS</div>
+    <div id="yardshome"><br><%= @homeyards %></div><br>
+    <div id="yardhome">PASSING YARDS</div>
+    <div id="yardshome"><br><%= @homepassyards %></div><br>
+    <div id="yardhome">RUSHING YARDS</div>
+    <div id="yardshome"><br><%= @homerushyards %></div><br>
+    <div id="yardhome">FIRST DOWNS</div>
+    <div id="yardshome"><br><%= @homefirstdowns %></div><br>
+</div>
+
+</div>
+
 
 <div class="commenthead">
     Were you at this game? Did you watch it? Share your thoughts here!

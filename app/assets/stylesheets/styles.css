@@ -267,19 +267,36 @@ a:visited {
 }
 .awayteamstats {
     position: relative;
-    width: 400px;
+    top: -20px;
+    width: 200px;
     border: 1px solid blue;
+    display: inline-block;
 }
-#yards {
-    position: relative;
-    float: right;
-    text-align: right;
-    font-size: 15px;
-}
-#yard {
+#yardaway {
     position: relative;
     float: left;
     text-align: left;
+    font-size: 15px;
+}
+#yardsaway {
+    position: relative;
+    font-size: 15px;
+}
+.hometeamstats {
+    position: relative;
+    top: -20px;
+    width: 200px;
+    border: 1px solid blue;
+    display: inline-block;
+}
+#yardhome {
+    position: relative;
+    float: left;
+    text-align: left;
+    font-size: 15px;
+}
+#yardshome {
+    position: relative;
     font-size: 15px;
 }
 .commenthead {
