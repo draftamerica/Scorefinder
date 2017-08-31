@@ -100,7 +100,7 @@ class TeamsController < ApplicationController
     nfl_url += year.to_s + "/"
     nfl_url += nfl_season + "/schedule."
     nfl_url += format + "?api_key="
-    nfl_url += "x2kpv28e8d7pe3cn2qqesk6t"
+    nfl_url += "n4h5vx4dp8njm87pp8ahsdr4"
     @nfl_data = self.get_nfl_data(nfl_url)
 
     @nfl_data['weeks'].each do |week|
@@ -143,7 +143,7 @@ class TeamsController < ApplicationController
       nfl_url += away_team + "/"
       nfl_url += home_team + "/boxscore."
       nfl_url += format + "?api_key="
-      nfl_url += "x2kpv28e8d7pe3cn2qqesk6t"
+      nfl_url += "n4h5vx4dp8njm87pp8ahsdr4"
       puts "\*****nfl_url, #{nfl_url.inspect}"
       game_stats = NFL.get_nfl_data(nfl_url)
       return game_stats
@@ -170,7 +170,7 @@ class TeamsController < ApplicationController
       nfl_url += away_team + "/"
       nfl_url += home_team + "/statistics."
       nfl_url += format + "?api_key="
-      nfl_url += "x2kpv28e8d7pe3cn2qqesk6t"
+      nfl_url += "n4h5vx4dp8njm87pp8ahsdr4"
       puts "\*****nfl_url, #{nfl_url.inspect}"
       game_stats = NFL.get_nfl_data(nfl_url)
       return game_stats
